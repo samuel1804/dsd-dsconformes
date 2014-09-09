@@ -5,21 +5,14 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-       <form id="frmPlatos" runat="server">
+    <form id="frmCategoria" runat="server">
     <div class="tablaCategoria">
-    <h2>Platos</h2>
+    <h2>Categorias</h2>
     <div class="tablarow">
     <div class="tablaizquierda">Codigo:</div><div class="tabladerecha"><asp:TextBox ID="txtCodigo" runat="server"></asp:TextBox></div>
     </div>
     <div class="tablarow">
-    <div class="tablaizquierda">Categoria:</div><div class="tabladerecha"><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></div>
-    </div>
-    <div class="tablarow">
     <div class="tablaizquierda">Descripcion:</div><div class="tabladerecha"><asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox></div>
-    </div>
-    <div class="tablarow">
-    <div class="tablaizquierda">Precio:</div><div class="tabladerecha"><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></div>
     </div>
     <div class="tablaseparator"></div>
     <div class="tablarow">
@@ -27,5 +20,4 @@
     </div>
     </div>
     </form>
-
 </asp:Content>
