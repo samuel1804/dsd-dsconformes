@@ -19,6 +19,13 @@ namespace DSconformes.Controllers
         public IFormsAuthenticationService FormsService { get; set; }
         public IMembershipService MembershipService { get; set; }
 
+
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         protected override void Initialize(RequestContext requestContext)
         {
             if (FormsService == null) { FormsService = new FormsAuthenticationService(); }
