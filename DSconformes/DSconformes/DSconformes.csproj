@@ -90,7 +90,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\Styles\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-menu.min.js" />
+    <Content Include="Styles\bootstrap-theme.min.css" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\bootstrap_black.css" />
+    <Content Include="Styles\Site.css" />
     <Content Include="Views\Categoria\Index.aspx" />
+    <Content Include="Views\Account\Index.aspx" />
     <Content Include="Views\Mesa\Index.aspx" />
     <Content Include="Views\Plato\Index.aspx" />
     <Content Include="Views\Reservacion\Index.aspx" />
@@ -134,6 +141,8 @@
     <None Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Styles\bootstrap-theme.css.map" />
+    <None Include="Styles\bootstrap.css.map" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
