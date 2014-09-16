@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSconformes.Tests", "DSconf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSconformes.PlatosService", "DSconformes.PlatosService\DSconformes.PlatosService.csproj", "{C683B3B8-DCEB-49E2-9786-7BDADAA519E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerías", "Librerías", "{BD4A3BF2-1F91-473E-A673-AF94730232B1}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
