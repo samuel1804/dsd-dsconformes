@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns ="urn:nhibernate-mapping 2.2"
+                   assembly ="DSconformes"
+                   namespace ="DSconformes.Dominio"
+                   default-lazy="false">
+
+  <class name ="Zona" table="t_zona">
+    <id name="id" column="codigo">
+      <generator class="increment"  />
+    </id>
+    <property name="Nombre" column="nombre" />
+    <property name="Descripcion" column="descripcion" />
+    <property name="Capacidad" column="capacidad" />
+  </class>
+</hibernate-mapping>

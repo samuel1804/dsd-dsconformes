@@ -34,10 +34,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=3.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -73,13 +82,22 @@
     <Compile Include="Controllers\PlatoController.cs" />
     <Compile Include="Controllers\ReservacionController.cs" />
     <Compile Include="Controllers\ZonaController.cs" />
+    <Compile Include="Dominio\Mesa.cs" />
+    <Compile Include="Dominio\Zona.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Pesistencia\BaseDAO.cs" />
+    <Compile Include="Pesistencia\ConexionUtil.cs" />
+    <Compile Include="Pesistencia\MesaDAO.cs" />
+    <Compile Include="Pesistencia\NHibernateHelper.cs" />
+    <Compile Include="Pesistencia\ZonaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Iesi.Collections.dll" />
+    <Content Include="bin\NHibernate.dll" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -89,6 +107,8 @@
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Styles\Site.css" />
+    <Content Include="Dominio\Mesa.hbm.xml" />
+    <Content Include="Dominio\Zona.hbm.xml" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-menu.min.js" />
