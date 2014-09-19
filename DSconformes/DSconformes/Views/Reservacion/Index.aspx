@@ -71,65 +71,13 @@
 			              </div>
 			            </div>
 			            <br /><br />
-			          <div class="form-group">
-			            <div class="col-sm-2">
-			              <label class="form-label">Platos</label>
-			            </div>
-			            <div class="col-sm-5">
-			           <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" class="btn btn-primary" 
-                                 />
-			            </div>
-                        <br /><br />				           			
-			          </div>
 			           <br>
-			          <div class="form-group">
-			            <div class="col-md-12">
-			             
-                         <%--ACA VA LA GRILLA--%>
-                        
-                         
-                        
-                            <asp:GridView ID="GvDirectivos" runat="server" AutoGenerateColumns="False" 
-                                class="table table-striped table-bordered table-hover" 
-                                ShowHeaderWhenEmpty="True">
-                                <Columns>
-                                    <asp:BoundField HeaderText="Codigo" DataField="N_IdDirectivo">
-                                    <ItemStyle Width="80px" />
-                                    </asp:BoundField>
-                                    <asp:BoundField HeaderText="NOMBRE" DataField="C_NomPer">
-                                    <ItemStyle Width="300px" />
-                                    </asp:BoundField>
-                                    <asp:TemplateField HeaderText="DIRIGE">
-                                        <ItemTemplate>
-                                        <%-- <asp:UpdatePanel ID="upgrilla" runat="server">
-                                         <ContentTemplate>--%>
-                                                            <asp:CheckBox ID="ChkSeleccionado" runat="server" 
-                                                                 AutoPostBack="True" />
-                                                                 </ContentTemplate>
-                                   <%--      <Triggers>
-                                         <asp:PostBackTrigger  ControlID="ChkSeleccionado" />
-                                         </Triggers>
-                                         </asp:UpdatePanel>--%>
-                                        </ItemTemplate>
-                                        <ItemStyle Width="90px" />
-                                    </asp:TemplateField>
-                                </Columns>
-                                <emptydatatemplate>
-                                    <asp:image id="NoDataImage"
-                                    imageurl="~/images/NoData_32x32.png"
-                                    alternatetext="No Image" 
-                                    runat="server"/>
-                                    No se encontraron registros.  
-                                </emptydatatemplate> 
-                            </asp:GridView>
-			            </div>
-			          </div>
                         <br /><br />
 			          <div class="form-group">
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" 
+					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" onclick="BtnGrabar_Click" 
                                        />			              			             
 					            </div>
 					          </div>	
