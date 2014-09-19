@@ -14,6 +14,19 @@ namespace DSconformes.Controllers
         public ActionResult Index()
         {
             return View();
+
+
+        }
+
+        public ActionResult CrearPedido()
+        {
+            return View();
+
+        }
+
+        public ActionResult EmitirComanda()
+        {
+            return View();
         }
 
     }
