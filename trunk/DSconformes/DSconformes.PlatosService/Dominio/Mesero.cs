@@ -10,10 +10,17 @@ namespace DSconformes.PlatosService.Dominio
     public class Mesero
     {
     [DataMember]
-    public string dni { get; set; }
+    public int id_mesero { get; set; }
+    [DataMember]
+    public int dni { get; set; }
     [DataMember]   
     public string nombre { get; set; }
     [DataMember]    
     public Mesa mesa { get; set; }
+    [DataMember]
+    public char sexo { get; set; }
+    [DataMember]
+    public int edad { get; set; }
     }
+
 }

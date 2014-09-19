@@ -110,6 +110,7 @@
     <Content Include="Views\Categoria\Index.aspx" />
     <Content Include="Views\Account\Index.aspx" />
     <Content Include="Views\Mesa\Index.aspx" />
+    <Content Include="Views\Mesero\Index.aspx" />
     <Content Include="Views\Plato\Index.aspx" />
     <Content Include="Views\Reservacion\Index.aspx" />
     <Content Include="Views\Zona\Index.aspx" />
