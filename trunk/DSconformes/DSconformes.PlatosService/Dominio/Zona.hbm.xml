@@ -5,11 +5,10 @@
                    default-lazy="false">
 
   <class name ="Zona" table="t_zona">
-    <id name="id" column="codigo">
+    <id name="id_zona" column="id_zona">
       <generator class="increment"  />
     </id>
-    <property name="Nombre" column="nombre" />
-    <property name="Descripcion" column="descripcion" />
-    <property name="Capacidad" column="capacidad" />
+    <property name="nombre" column="nombre" />
+    <property name="capacidad" column="capacidad" />
   </class>
 </hibernate-mapping>

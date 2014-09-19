@@ -5,12 +5,12 @@
                    default-lazy="false">
 
   <class name ="Mesa" table="t_mesa">
-    <id name="Codigo" column="id">
+    <id name="id_mesa" column="id_mesa">
       <generator class="increment"  />
     </id>
-    <many-to-one name ="Zona" colum="zona" />
-    <property name="Estado" column="estado" />
-    <property name="Capacidad" column="capacidad" />
+    <many-to-one name ="zona" colum="zona" />
+    <property name="estado" column="estado" />
+    <property name="asientos" column="asientos" />
     
   </class>
 </hibernate-mapping>
