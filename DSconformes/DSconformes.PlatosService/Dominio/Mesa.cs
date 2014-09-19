@@ -10,13 +10,13 @@ namespace DSconformes.Dominio
     public class Mesa
     {
         [DataMember]
-        public int Codigo { get; set; }
+        public int id_mesa { get; set; }
         [DataMember]
-        public Zona Zona { get; set; }
+        public Zona zona { get; set; }
         [DataMember]
-        public string Estado { get; set; }
+        public int estado { get; set; }
         [DataMember]
-        public int Capacidad { get; set; }
+        public int asientos { get; set; }
 
     }
 }

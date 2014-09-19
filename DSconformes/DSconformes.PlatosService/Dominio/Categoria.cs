@@ -4,17 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace DSconformes.Dominio
+namespace DSconformes.PlatosService.Dominio
 {
     [DataContract]
-    public class Zona
+    public class Categoria
     {
         [DataMember]
-        public int id_zona { get; set; }
+        public int id_categoria { get; set; }
         [DataMember]
         public string nombre { get; set; }
-        [DataMember]
-        public int capacidad { get; set; }
-
     }
 }
