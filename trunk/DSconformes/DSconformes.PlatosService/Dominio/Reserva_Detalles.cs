@@ -20,6 +20,6 @@ namespace DSconformes.PlatosService.Dominio
         [DataMember]
         public decimal costo { get; set; }
         [DataMember]
-        public decimal SubTotal { get; set; }
+        public decimal subtotal { get; set; }
     }
 }
