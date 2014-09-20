@@ -99,9 +99,14 @@
       <DependentUpon>Mesero.svc</DependentUpon>
     </Compile>
     <Compile Include="Pesistencia\BaseDAO.cs" />
+    <Compile Include="Pesistencia\CategoriaDAO.cs" />
     <Compile Include="Pesistencia\ConexionUtil.cs" />
     <Compile Include="Pesistencia\MesaDAO.cs" />
+    <Compile Include="Pesistencia\MeseroDAO.cs" />
     <Compile Include="Pesistencia\NHibernateHelper.cs" />
+    <Compile Include="Pesistencia\PlatoDAO.cs" />
+    <Compile Include="Pesistencia\ReservaDAO.cs" />
+    <Compile Include="Pesistencia\Reserva_detalleDAO.cs" />
     <Compile Include="Pesistencia\ZonaDAO.cs" />
     <Compile Include="Plato.svc.cs">
       <DependentUpon>Plato.svc</DependentUpon>
