@@ -8,8 +8,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>Detalle</h2><br />
-    <label>ID:</label><asp:Label runat="server" ID="lblId"></asp:Label> <br /><br />
-    <label>Descripcion:</label><asp:Label runat="server" ID="lblDescripcion"></asp:Label> <br /><br />
-    <label>#Sillas:</label><asp:Label runat="server" ID="lblSillas"></asp:Label> <br /><br />
-    <label>Descripcion:</label><asp:CheckBox runat="server" ID="chkHabilitado"></asp:CheckBox> <br /><br />
+    <label>ID:</label><input type="text"  id="lblId" value="<%: ViewData["id_zona"] %>" /> <br /><br />
+    <label>Descripcion:</label><input type="text" id="lblDescripcion"  value=" <%: ViewData["nombre"] %>" /><br /><br />
+    <label>#Sillas:</label><input type="text"  id="lblSillas"  value=" <%: ViewData["capacidad"] %>" /> <br /><br />
+    <label>Descripcion:</label><input type="checkbox" id="chkHabilitado" Checked="<%: ViewData["habilitado"] %>" /><br /><br />
 </asp:Content>
