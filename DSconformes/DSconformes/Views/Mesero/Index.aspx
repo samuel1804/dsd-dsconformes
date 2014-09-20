@@ -34,7 +34,8 @@
 			                <label class="form-label">Codigo</label>
 			              </div>
 			              <div class="col-sm-10">
-			                  <asp:TextBox ID="id_mesero" runat="server" class="form-control input-sm"  ></asp:TextBox>
+			                  <asp:TextBox ID="id_mesero" runat="server" class="form-control input-sm"
+                              required placeholder="Ingrese el Código"  ></asp:TextBox>
 			              </div>
 			            </div>
 			            <br /><br />
@@ -43,23 +44,58 @@
 			                <label class="form-label">DNI</label>
 			              </div>
 			              <div class="col-sm-10">
-			                  <asp:TextBox ID="TextBox1" runat="server" class="form-control input-sm"  ></asp:TextBox>
+			                  <asp:TextBox ID="TextBox1" runat="server" class="form-control input-sm"
+                              required placeholder="Ingrese el DNI"  ></asp:TextBox>
 			              </div>
 			            </div>
 			            <br /><br />
                          <div class="form-group">
 			              <div class="col-sm-2">
-			                <label class="form-label">Precio</label>
+			                <label class="form-label">Nombres</label>
 			              </div>
 			              <div>
 			                <div class="col-sm-10">
-			                    <asp:TextBox ID="TextBox2" runat="server" class="form-control" 
-                                    required placeholder="0,00" ></asp:TextBox>
+			                    <asp:TextBox ID="TextBox2" runat="server" class="form-control input-sm"
+                                required placeholder="Ingrese Nombres"  ></asp:TextBox>
 			                </div>
 			              </div>
 			            </div>
                         <br /><br />
-
+                        <div class="form-group">
+			              <div class="col-sm-2">
+			                <label class="form-label">Mesa</label>
+			              </div>
+			              <div class="col-sm-10">
+			                  <asp:TextBox ID="TextBox3" runat="server" class="form-control input-sm"
+                              required placeholder="Ingrese el Código de la Mesa"  ></asp:TextBox>
+			              </div>
+			            </div>
+			            <br /><br />
+                        <div class="form-group">
+			              <div class="col-sm-2">
+			                <label class="form-label">Sexo</label>
+			              </div>
+			              <div>
+			                <div class="col-sm-10">
+			                    <asp:DropDownList ID="TxtTemas" runat="server" class="form-control" 
+                                    TextMode="MultiLine">
+                                    <asp:ListItem Text="Hombre" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="Mujer" Value="1"></asp:ListItem>
+                                    </asp:DropDownList>
+			                </div>
+			              </div>
+			            </div>
+                        <br /><br />
+                         <div class="form-group">
+			              <div class="col-sm-2">
+			                <label class="form-label">Edad</label>
+			              </div>
+			              <div class="col-sm-10">
+			                  <asp:TextBox ID="TextBox4" runat="server" class="form-control input-sm"
+                              required placeholder="Ingrese la edad"  ></asp:TextBox>
+			              </div>
+			            </div>
+			            <br /><br />
 			          <div class="form-group">
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
