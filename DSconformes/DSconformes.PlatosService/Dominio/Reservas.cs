@@ -7,7 +7,7 @@ using DSconformes.PlatosService.Dominio;
 namespace DSconformes.PlatosService.Dominio
 {
     [DataContract]
-    public class Reserva
+    public class Reservas
     {
 
         [DataMember]
@@ -15,7 +15,7 @@ namespace DSconformes.PlatosService.Dominio
         [DataMember]
         public string nombre { get; set; }
         [DataMember]
-        public Zona zona { get; set; }
+        public Zonas zona { get; set; }
         [DataMember]
         public TimeSpan hora_inicio { get; set; }
         [DataMember]

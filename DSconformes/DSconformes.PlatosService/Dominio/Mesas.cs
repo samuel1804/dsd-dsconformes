@@ -7,12 +7,12 @@ using System.Runtime.Serialization;
 namespace DSconformes.PlatosService.Dominio
 {
     [DataContract]
-    public class Mesa
+    public class Mesas
     {
         [DataMember]
         public int id_mesa { get; set; }
         [DataMember]
-        public Zona zona { get; set; }
+        public Zonas zona { get; set; }
         [DataMember]
         public int estado { get; set; }
         [DataMember]

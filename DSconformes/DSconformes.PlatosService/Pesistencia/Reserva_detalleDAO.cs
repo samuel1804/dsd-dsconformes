@@ -7,7 +7,7 @@ using DSconformes.PlatosService.Dominio;
 
 namespace DSconformes.Pesistencia
 {
-    public class Reserva_DetalleDAO : BaseDAO<Reserva_Detalle , int>
+    public class Reserva_DetalleDAO : BaseDAO<Reserva_Detalles , int>
     {
     }
 }
