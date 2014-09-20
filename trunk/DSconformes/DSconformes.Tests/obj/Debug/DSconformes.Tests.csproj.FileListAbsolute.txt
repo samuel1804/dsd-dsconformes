@@ -1,0 +1,12 @@
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\DSconformes.Tests.dll.config
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\DSconformes.Tests.dll
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\DSconformes.Tests.pdb
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\DSconformes.dll
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\DSconformes.PlatosService.dll
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\NHibernate.dll
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\Iesi.Collections.dll
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\DSconformes.pdb
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\bin\Debug\DSconformes.PlatosService.pdb
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\obj\Debug\DSconformes.Tests.csprojResolveAssemblyReference.cache
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\obj\Debug\DSconformes.Tests.dll
+D:\DSD - DSconformes - Parcial\DSconformes\DSconformes.Tests\obj\Debug\DSconformes.Tests.pdb
