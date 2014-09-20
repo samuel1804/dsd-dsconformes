@@ -4,14 +4,28 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-
+using DSconformes.Persistencia;
+using DSconformes.PlatosService.Dominio;
 namespace DSconformes.PlatosService
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Reserva" en el código, en svc y en el archivo de configuración a la vez.
     public class Reserva : IReserva
     {
-        public void DoWork()
+        private ReservaDAO rs = new ReservaDAO();
+        public Reservas Registrar(string nombre, string dni, int id_zona, int id_mesa, TimeSpan hora_inicio, int estado, int asistentes,DateTime fecha)
         {
+          Reservas reservas=new Reservas();
+          reservas.nombre=nombre;
+          reservas.dni = dni;
+          reservas.id_zona = id_zona;
+          reservas.id_mesa = id_mesa;
+          reservas.hora_inicio = hora_inicio;
+          reservas.estado = estado;
+          reservas.asistentes = asistentes;
+          reservas.fecha = fecha;
+
+      return  rs.Crear(reservas);
+}
         }
     }
-}
+
