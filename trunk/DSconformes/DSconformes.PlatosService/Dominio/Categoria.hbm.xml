@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns ="urn:nhibernate-mapping 2.2"
+                   assembly ="DSconformes"
+                   namespace ="DSconformes.Dominio"
+                   default-lazy="false">
+
+  <class name ="Categoria" table="t_categoria">
+    <id name="id_categoria" column="id_categoria">
+      <generator class="increment"  />
+    </id>   
+    <property name="nombre" column="nombre" />
+    
+
+  </class>
+</hibernate-mapping>
+
