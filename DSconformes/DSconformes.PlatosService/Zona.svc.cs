@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using DSconformes.Pesistencia;
+using DSconformes.Persistencia;
 using DSconformes.PlatosService.Dominio;
 namespace DSconformes.PlatosService
 {
@@ -12,9 +12,9 @@ namespace DSconformes.PlatosService
     public class Zona : IZona
     {
         ZonaDAO zd = new ZonaDAO();
-        public List<Zona> ListarZonas()
+        public List<Zonas> ListarZonas()
         {
-           return null;
+            return zd.ListarTodos().ToList();
         }
     }
 }
