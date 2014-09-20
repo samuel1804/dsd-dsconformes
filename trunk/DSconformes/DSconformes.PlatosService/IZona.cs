@@ -13,6 +13,6 @@ namespace DSconformes.PlatosService
     public interface IZona
     {
         [OperationContract]
-        List<Zona> ListarZonas();
+        List<Zonas> ListarZonas();
     }
 }
