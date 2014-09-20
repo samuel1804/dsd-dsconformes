@@ -9,7 +9,7 @@
       <generator class="increment"  />
     </id>
     <many-to-one name ="zona" colum="zona" />
-    <property name="estado" column="estado" />
+    <property name="estado " column="estado" />
     <property name="asientos" column="asientos" />
     
   </class>
