@@ -8,9 +8,12 @@
     <id name="id_mesero" column="id_mesero">
       <generator class="increment"  />
     </id>
-    <many-to-one name ="mesa" column="id_mesa" />
     <property name="dni" column="dni" />
     <property name="nombre" column="nombre" />
+    <many-to-one name ="mesa" column="id_mesa" />
+    <property name="sexo" column="sexo" />
+    <property name="edad" column="edad" />
+
 
 
   </class>
