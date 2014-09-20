@@ -34,11 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Iesi.Collections">
-      <HintPath>..\Librerias\Iesi.Collections.dll</HintPath>
+      <HintPath>E:\JCabanillas\Argot\DSconformes\DSconformes\bin\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NHibernate">
-      <HintPath>..\Librerias\NHibernate.dll</HintPath>
+      <HintPath>E:\JCabanillas\Argot\DSconformes\DSconformes\bin\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
