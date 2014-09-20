@@ -9,5 +9,6 @@ namespace DSconformes.Pesistencia
 {
     public class MesaDAO : BaseDAO<Mesa, int>
     {
+        //Esto es una prueba
     }
 }
