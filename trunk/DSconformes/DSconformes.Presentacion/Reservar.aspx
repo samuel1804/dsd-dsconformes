@@ -57,7 +57,7 @@
 			              </div>
 			              
 			                <div class="col-sm-10">
-			                    <asp:TextBox ID="TxtTemas" runat="server" class="form-control input-sm" 
+			                    <asp:TextBox ID="txtNombre" runat="server" class="form-control input-sm" 
                                     required placeholder="Ingrese su Nombre"></asp:TextBox>
 			                </div>
 			             </div>
@@ -105,7 +105,7 @@
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" 
+					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" onclick="BtnGrabar_Click" 
                                        />			              			             
 					            </div>
 					          </div>	
