@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
 </asp:Content>
@@ -14,7 +15,9 @@
         <h3><strong >Mesas</strong></h3> 
       	        
         </div>
-              <label>Zona:</label>   @zona.nombre<br>
+        
+              <label>Zona:</label> @(Zona.nombre)<br>
+
         <div class="row">
           <div class="col-sm-3"></div>
            <div class="col-sm-6"> 
