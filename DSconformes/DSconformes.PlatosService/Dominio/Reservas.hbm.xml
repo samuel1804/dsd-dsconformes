@@ -11,7 +11,8 @@
 
     <property name="nombre" column="nombre" />
     <property name="dni" column="dni" />
-    <many-to-one name ="mesa" column="id_mesa" />
+    <many-to-one name ="id_zona" column="id_zona" />
+    <many-to-one name ="id_mesa" column="id_mesa" />
     <property name="hora_inicio" column="hora_inicio" />
     <property name="estado" column="estado" />
     <property name="asistentes" column="asistentes" />
