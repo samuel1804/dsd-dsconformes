@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns ="urn:nhibernate-mapping 2.2"
-                   assembly ="DSconformes"
+<hibernate-mapping xmlns ="urn:nhibernate-mapping-2.2"
+                   assembly ="DSconformes.PlatosService"
                    namespace ="DSconformes.PlatosService.Dominio"
                    default-lazy="false">
 
@@ -8,8 +8,8 @@
     <id name="id_reserva_detalle" column="id_reserva_detalle">
       <generator class="increment"  />
     </id>
-    <many-to-one name ="id_reserva" colum="id_reserva" />
-    <many-to-one name ="id_plato" colum="id_plato" />
+    <many-to-one name ="reserva" column="id_reserva" />
+    <many-to-one name ="plato" column="id_plato" />
     <property name="cantidad" column="cantidad" />
     <property name="costo" column="costo" />
     <property name="subtotal" column="subtotal" />
