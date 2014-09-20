@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DSconformes.PlatosService.Dominio;
 
 namespace DSconformes.PlatosService
 {
@@ -12,6 +13,6 @@ namespace DSconformes.PlatosService
     public interface IReserva
     {
         [OperationContract]
-        void DoWork();
+        Reservas Registrar(string nombre, string dni, int id_zona, int id_mesa, TimeSpan hora_inicio, int estado, int asistentes, DateTime fecha);
     }
 }
