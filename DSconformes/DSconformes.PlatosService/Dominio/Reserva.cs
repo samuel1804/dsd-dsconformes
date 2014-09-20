@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
-using DSconformes.Dominio;
+using DSconformes.PlatosService.Dominio;
 namespace DSconformes.PlatosService.Dominio
 {
     [DataContract]
