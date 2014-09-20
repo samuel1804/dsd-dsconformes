@@ -87,6 +87,10 @@
 					            <div class="col-md-12" align="center">
 					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" class="btn btn-primary" 
                                         />			              			             
+                                    <asp:Button ID="btnEliminar" runat="server" class="btn btn-primary" 
+                                        Text="Eliminar" />			              			             
+                                    <asp:Button ID="btnActualizar" runat="server" class="btn btn-primary" 
+                                        Text="Actualizar" />			              			             
 					            </div>
 					          </div>	
 				          </c:if>	
