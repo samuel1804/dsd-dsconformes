@@ -4,7 +4,7 @@
                    namespace ="DSconformes.PlatosService.Dominio"
                    default-lazy="false">
 
-  <class name ="Mesero" table="t_mesero">
+  <class name ="Meseros" table="t_mesero">
     <id name="id_mesero" column="id_mesero">
       <generator class="increment"  />
     </id>

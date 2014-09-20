@@ -4,7 +4,7 @@
                    namespace ="DSconformes.PlatosService.Dominio"
                    default-lazy="false">
 
-  <class name ="Categoria" table="t_categoria">
+  <class name ="Categorias" table="t_categoria">
     <id name="id_categoria" column="id_categoria">
       <generator class="increment"  />
     </id>   
