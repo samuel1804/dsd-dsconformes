@@ -60,8 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Categoria.svc" />
-    <Content Include="Dominio\Mesa.hbm.xml" />
-    <Content Include="Dominio\Zona.hbm.xml" />
+    <Content Include="Dominio\Categorias.hbm.xml" />
+    <Content Include="Dominio\Mesas.hbm.xml" />
+    <Content Include="Dominio\Meseros.hbm.xml" />
+    <Content Include="Dominio\Platos.hbm.xml" />
+    <Content Include="Dominio\Reservas.hbm.xml" />
+    <Content Include="Dominio\Reserva_Detalles.hbm.xml" />
+    <Content Include="Dominio\Zonas.hbm.xml" />
     <Content Include="Mesa.svc" />
     <Content Include="Mesero.svc" />
     <Content Include="Plato.svc" />
@@ -79,13 +84,13 @@
     <Compile Include="Categoria.svc.cs">
       <DependentUpon>Categoria.svc</DependentUpon>
     </Compile>
-    <Compile Include="Dominio\Categoria.cs" />
-    <Compile Include="Dominio\Mesa.cs" />
-    <Compile Include="Dominio\Mesero.cs" />
-    <Compile Include="Dominio\Plato.cs" />
-    <Compile Include="Dominio\Reserva.cs" />
-    <Compile Include="Dominio\Reserva_Detalle.cs" />
-    <Compile Include="Dominio\Zona.cs" />
+    <Compile Include="Dominio\Categorias.cs" />
+    <Compile Include="Dominio\Mesas.cs" />
+    <Compile Include="Dominio\Meseros.cs" />
+    <Compile Include="Dominio\Platos.cs" />
+    <Compile Include="Dominio\Reservas.cs" />
+    <Compile Include="Dominio\Reserva_Detalles.cs" />
+    <Compile Include="Dominio\Zonas.cs" />
     <Compile Include="ICategoria.cs" />
     <Compile Include="IMesa.cs" />
     <Compile Include="IMesero.cs" />
@@ -98,16 +103,16 @@
     <Compile Include="Mesero.svc.cs">
       <DependentUpon>Mesero.svc</DependentUpon>
     </Compile>
-    <Compile Include="Pesistencia\BaseDAO.cs" />
-    <Compile Include="Pesistencia\CategoriaDAO.cs" />
-    <Compile Include="Pesistencia\ConexionUtil.cs" />
-    <Compile Include="Pesistencia\MesaDAO.cs" />
-    <Compile Include="Pesistencia\MeseroDAO.cs" />
-    <Compile Include="Pesistencia\NHibernateHelper.cs" />
-    <Compile Include="Pesistencia\PlatoDAO.cs" />
-    <Compile Include="Pesistencia\ReservaDAO.cs" />
-    <Compile Include="Pesistencia\Reserva_detalleDAO.cs" />
-    <Compile Include="Pesistencia\ZonaDAO.cs" />
+    <Compile Include="Persistencia\BaseDAO.cs" />
+    <Compile Include="Persistencia\CategoriaDAO.cs" />
+    <Compile Include="Persistencia\ConexionUtil.cs" />
+    <Compile Include="Persistencia\MesaDAO.cs" />
+    <Compile Include="Persistencia\MeseroDAO.cs" />
+    <Compile Include="Persistencia\NHibernateHelper.cs" />
+    <Compile Include="Persistencia\PlatoDAO.cs" />
+    <Compile Include="Persistencia\ReservaDAO.cs" />
+    <Compile Include="Persistencia\Reserva_detalleDAO.cs" />
+    <Compile Include="Persistencia\ZonaDAO.cs" />
     <Compile Include="Plato.svc.cs">
       <DependentUpon>Plato.svc</DependentUpon>
     </Compile>
