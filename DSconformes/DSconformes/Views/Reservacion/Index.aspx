@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<DSconformes.ws_zona.Zonas>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
@@ -75,6 +75,9 @@
 			                <label class="form-label">Zona</label>
 			              </div>
 			              <div class="col-sm-10">
+                         
+                          <%:Html.DropDownListFor(m => m.id_zona, Model.nombre)%>
+
 			                  <asp:DropDownList ID="ddlZona" runat="server" CssClass="dropdown" ></asp:DropDownList>
 			              </div>
 			            </div>
