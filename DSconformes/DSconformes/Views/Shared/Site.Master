@@ -40,12 +40,9 @@
 						<li><%: Html.ActionLink("Registrar", "Index", "Plato")%></li>
                         <li><a href="#" target="_top" >Buscar</a></li>	        							
 					</ul></li>
-			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Mesas<b class="caret"></b></a>
+			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Zonas<b class="caret"></b></a>
                <ul class="dropdown-menu">
-						<li><%: Html.ActionLink("Listar", "Index", "Mesa")%></li>
-                        <li><%: Html.ActionLink("Registrar", "Index", "Mesa")%></li>	        							
-                        <li><%: Html.ActionLink("Actualizar", "Index", "Mesa")%></li>
-                        <li><%: Html.ActionLink("Eliminar", "Index", "Mesa")%></li>
+						<li><%: Html.ActionLink("Listar", "Index", "Zona")%></li>
 					</ul>
                     </li>
 

@@ -11,10 +11,10 @@
           <div class="container">
       
         <div class="text-center">
-        <h3><strong >Registrar Mesas</strong></h3> 
+        <h3><strong >Mesas</strong></h3> 
       	        
         </div>
-        <br>
+              <label>Zona:</label>   @zona.nombre<br>
         <div class="row">
           <div class="col-sm-3"></div>
            <div class="col-sm-6"> 
@@ -25,39 +25,79 @@
                         <%-- <img  src="<%=request.getContextPath()%>/css/progress_bar.gif" >--%>
 					</div>          		 				
 		         	
-           
+                    <div>
+                    <table style="width: 100%;" border="1">
+        <tr>
+            <td>
+               <label>Código</label>
+            </td>
+            <td>
+                 <label>Mesa</label>
+            </td>
+            <td>
+                <label>Capacidad</label>
+            </td>
+              <td>
+                <label>Seleccione</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+               M1
+            </td>
+            <td>
+               4
+            </td>
+            <td>
+                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa")%></label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+               Terraza
+            </td>
+            <td>
+               25
+            </td>
+            <td>
+                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa")%></label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               3
+            </td>
+            <td>
+               Publico
+            </td>
+            <td>
+               150
+            </td>
+            <td>
+                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa")%></label>
+            </td>
+        </tr>
+    </table>
+                    </div>
           		 
           		 
           		 
-			           <div class="form-group">
-			              <div class="col-sm-2">
-			                <label class="form-label">Codigo</label>
-			              </div>
-			              <div class="col-sm-10">
-			                  <asp:TextBox ID="txtCodigo" runat="server" class="form-control input-sm"  ></asp:TextBox>
-			              </div>
-			            </div>
-                        <br /> <br />
-                         <div class="form-group">
-			              <div class="col-sm-2">
-			                <label class="form-label">Número</label>
-			              </div>
-			              <div>
-			                <div class="col-sm-10">
-			                    <asp:TextBox ID="TextBox1" runat="server" class="form-control" 
-                                    ></asp:TextBox>
-			                </div>
-			              </div>
-			            </div>
-                       
+			         
                         <br /><br /><br />
 
 			          <div class="form-group">
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" class="btn btn-primary" 
-                                        />			              			             
+					                <asp:Button ID="btnGrabar" runat="server" Text="Adicionar" class="btn btn-primary" />			              			             
+                                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" class="btn btn-primary" />			              			             
+                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" class="btn btn-primary" />			              			             
 					            </div>
 					          </div>	
 				          </c:if>	

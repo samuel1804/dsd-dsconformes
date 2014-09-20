@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\DetalleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MesaController.cs" />
     <Compile Include="Controllers\PlatoController.cs" />
@@ -109,6 +110,7 @@
     <Content Include="Styles\Site.css" />
     <Content Include="Views\Categoria\Index.aspx" />
     <Content Include="Views\Account\Index.aspx" />
+    <Content Include="Views\Mesa\Detalle.aspx" />
     <Content Include="Views\Mesa\Index.aspx" />
     <Content Include="Views\Mesero\Index.aspx" />
     <Content Include="Views\Plato\Index.aspx" />
@@ -155,6 +157,12 @@
     <None Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Styles\bootstrap-theme.css.map" />
     <None Include="Styles\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSconformes.PlatosService\DSconformes.PlatosService.csproj">
+      <Project>{C683B3B8-DCEB-49E2-9786-7BDADAA519E4}</Project>
+      <Name>DSconformes.PlatosService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
