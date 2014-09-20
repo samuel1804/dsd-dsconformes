@@ -52,32 +52,57 @@
 			             <br /><br />
 			            <div class="form-group">
 			              <div class="col-sm-2">
-			                <label class="form-label">Temas</label>
+			                <label class="form-label">Nombres</label>
 			              </div>
-			              <div>
+			              
 			                <div class="col-sm-10">
 			                    <asp:TextBox ID="TxtTemas" runat="server" class="form-control input-sm" 
-                                    required placeholder="Tema" Height="88px" TextMode="MultiLine"></asp:TextBox>
+                                    required placeholder="Ingrese su Nombre"></asp:TextBox>
 			                </div>
-			              </div>
-			            </div>
-			              <br/><br/><br/><br/>
-			            <div class="form-group">
-			              <div class="col-sm-2">
-			                <label class="form-label">Acuerdos</label>
+			             </div>
+                         <br />
+                         <div class="form-group">
+                          <div class="col-sm-2">
+			                <label class="form-label">DNI</label>
 			              </div>
 			              <div class="col-sm-10">
-			                  <asp:TextBox ID="txtAcuerdos" runat="server" class="form-control input-sm" required placeholder="Tema" TextMode="MultiLine"></asp:TextBox>
+			                  <asp:TextBox ID="txtDNI" runat="server" class="form-control input-sm" required placeholder="Ingrese DNI" ></asp:TextBox>
 			              </div>
 			            </div>
-			            <br /><br />
-			           <br>
-                        <br /><br />
+			              <br/>
+                          <div class="form-group">
+                          <div class="col-sm-2">
+			                <label class="form-label">Zona</label>
+			              </div>
+			              <div class="col-sm-10">
+			                  <asp:DropDownList ID="ddlZona" runat="server" CssClass="dropdown" ></asp:DropDownList>
+			              </div>
+			            </div>
+                        <br />
+                        <div class="form-group">
+                          <div class="col-sm-2">
+			                <label class="form-label">Mesa</label>
+			              </div>
+			              <div class="col-sm-10">
+			                  <asp:DropDownList ID="ddlMesa" runat="server" CssClass="dropdown" ></asp:DropDownList>
+			              </div>
+			            </div>
+			            <br />
+                        <div class="form-group">
+                          <div class="col-sm-2">
+			                <label class="form-label">Nro. Personas</label>
+			              </div>
+			              <div class="col-sm-10">
+			                 <asp:TextBox ID="txtCantidad" type="number" runat="server"  style="width:100px"
+                                    ></asp:TextBox>
+			              </div>
+			            </div>
+                        <br /><br /><br /><br />
 			          <div class="form-group">
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" onclick="BtnGrabar_Click" 
+					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" 
                                        />			              			             
 					            </div>
 					          </div>	
