@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-
+<%@ Import Namespace="DSconformes.PlatosService.Dominio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
 </asp:Content>
@@ -16,7 +16,7 @@
       	        
         </div>
         
-              <label>Zona:</label> @(Zona.nombre)<br>
+              <label>Zona:</label>    <%: ViewData["nombre"] %><br>
 
         <div class="row">
           <div class="col-sm-3"></div>
@@ -55,7 +55,7 @@
                4
             </td>
             <td>
-                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa")%></label>
+                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa", new { id_zona = 1, nombre = "M1", capacidad = 4, habilitado = true }, null)%></label>
             </td>
         </tr>
         <tr>
@@ -63,13 +63,13 @@
                 2
             </td>
             <td>
-               Terraza
+               M2
             </td>
             <td>
                25
             </td>
             <td>
-                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa")%></label>
+                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa", new { id_zona = 2, nombre = "M2", capacidad = 4, habilitado = true }, null)%></label>
             </td>
         </tr>
         <tr>
@@ -77,13 +77,13 @@
                3
             </td>
             <td>
-               Publico
+               M3
             </td>
             <td>
                150
             </td>
             <td>
-                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa")%></label>
+                <label><%: Html.ActionLink("Seleccione", "Detalle", "Mesa", new { id_zona = 3, nombre = "M3", capacidad = 4, habilitado = true }, null)%></label>
             </td>
         </tr>
     </table>

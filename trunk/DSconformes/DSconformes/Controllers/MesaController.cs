@@ -12,19 +12,24 @@ namespace DSconformes.Controllers
     {
         //
         // GET: /Mesa/
+        Zonas zonas = null;
 
         public ActionResult Index(int codigoZona, string nombre, int capacidad )
         {
 
-
-            //Zona zona = new Zona { id_zona = codigoZona, nombre = nombre,  capacidad = capacidad };
+          
+           //ViewData["Zonas"] = new Zonas { id_zona = codigoZona, nombre = nombre,  capacidad = capacidad };
+            ViewData["nombre"] = nombre;
             return View();
         }
 
-        public ActionResult Detalle()
+        public ActionResult Detalle(int id_zona, string nombre, int capacidad, Boolean habilitado)
         {
+            ViewData["id_zona"] = id_zona;
+            ViewData["nombre"] = nombre;
+            ViewData["capacidad"] = capacidad;
+            ViewData["habilitado"] = habilitado;
             return View();
-
         }
 
 
