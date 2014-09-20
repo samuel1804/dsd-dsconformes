@@ -83,6 +83,7 @@
     </Content>
     <Content Include="Platos.aspx" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="Reservar.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reservar.aspx.cs">
+      <DependentUpon>Reservar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservar.aspx.designer.cs">
+      <DependentUpon>Reservar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
