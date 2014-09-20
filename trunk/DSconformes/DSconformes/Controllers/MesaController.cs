@@ -17,7 +17,7 @@ namespace DSconformes.Controllers
         {
 
 
-            Zona zona = new Zona { id_zona = codigoZona, nombre = nombre,  capacidad = capacidad };
+            //Zona zona = new Zona { id_zona = codigoZona, nombre = nombre,  capacidad = capacidad };
             return View();
         }
 
