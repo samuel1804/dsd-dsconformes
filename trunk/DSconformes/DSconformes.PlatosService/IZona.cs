@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DSconformes.PlatosService.Dominio;
 
 namespace DSconformes.PlatosService
 {
@@ -12,6 +13,6 @@ namespace DSconformes.PlatosService
     public interface IZona
     {
         [OperationContract]
-        void DoWork();
+        List<Zona> ListarZonas();
     }
 }

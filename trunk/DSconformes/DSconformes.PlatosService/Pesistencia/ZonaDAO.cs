@@ -7,7 +7,7 @@ using DSconformes.PlatosService.Dominio;
 
 namespace DSconformes.Pesistencia
 {
-    public class ZonaDAO : BaseDAO<Zona, int>
+    public class ZonaDAO : BaseDAO<Zonas, int>
     {
     }
 }

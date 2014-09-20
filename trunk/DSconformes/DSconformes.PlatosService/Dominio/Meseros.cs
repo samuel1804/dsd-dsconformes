@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace DSconformes.PlatosService.Dominio
 {
 [DataContract]
-    public class Mesero
+    public class Meseros
     {
     [DataMember]
     public int id_mesero { get; set; }
@@ -16,7 +16,7 @@ namespace DSconformes.PlatosService.Dominio
     [DataMember]   
     public string nombre { get; set; }
     [DataMember]    
-    public Mesa mesa { get; set; }
+    public Mesas mesa { get; set; }
     [DataMember]
     public char sexo { get; set; }
     [DataMember]

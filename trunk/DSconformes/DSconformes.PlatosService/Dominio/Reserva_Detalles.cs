@@ -7,14 +7,14 @@ using System.Runtime.Serialization;
 namespace DSconformes.PlatosService.Dominio
 {
     [DataContract]
-    public class Reserva_Detalle
+    public class Reserva_Detalles
     {
         [DataMember]
         public int id_reserva_detalle { get; set; }
         [DataMember]
-        public Reserva reserva { get; set; }
+        public Reservas reserva { get; set; }
         [DataMember]
-        public Plato plato { get; set; }
+        public Platos plato { get; set; }
         [DataMember]
         public int cantidad { get; set; }
         [DataMember]
