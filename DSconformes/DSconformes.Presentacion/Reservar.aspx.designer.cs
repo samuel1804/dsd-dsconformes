@@ -40,13 +40,13 @@ namespace DSconformes.Presentacion {
         protected global::System.Web.UI.WebControls.TextBox TxtHora;
         
         /// <summary>
-        /// TxtTemas control.
+        /// txtNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTemas;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
         /// txtDNI control.
