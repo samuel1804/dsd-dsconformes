@@ -1,12 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" CodeBehind="Reservar.aspx.cs" Inherits="DSconformes.Presentacion.Reservas.Reservar" %>
 
 
+
+
 <asp:Content ID="Content3" ContentPlaceHolderID="TitleContent" runat="server">
-	Index
+Reservas
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="Contentheader" runat="server">
+ <script type="text/javascript">
+    $("txtfecha.DateFrom").datepicker({
+    minDate: 0,
+});
+        </script>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
 
+   
+      
     <asp:UpdatePanel ID="uptabla" runat ="server"><ContentTemplate>
 
           <div class="container">
@@ -35,7 +46,7 @@
 			              </div>
 			              <div class="col-sm-4">
 			             
-			            <asp:TextBox ID="TxtFecha" type="date" runat="server" class="form-control input-sm" required name="txtfecha"></asp:TextBox>
+			            <asp:TextBox ID="TxtFecha" type="date" runat="server" class="form-control input-sm" name="txtfecha"></asp:TextBox>
 			              </div>
 			              <div class="col-sm-1">
 			                <label class="form-label">Hora</label>
@@ -78,7 +89,8 @@
 			              <div class="col-sm-10">
                          
                          
-			                  <asp:DropDownList ID="ddlZona" runat="server" CssClass="dropdown" ></asp:DropDownList>
+			                  <asp:DropDownList ID="ddlZona" runat="server" CssClass="dropdown" 
+                                  AutoPostBack="True" onselectedindexchanged="ddlZona_SelectedIndexChanged" ></asp:DropDownList>
 			              </div>
 			            </div>
                         <br />
@@ -96,11 +108,14 @@
 			                <label class="form-label">Nro. Personas</label>
 			              </div>
 			              <div class="col-sm-10">
-			                 <asp:TextBox ID="txtCantidad" type="number" runat="server"  style="width:100px"
+			                 <asp:TextBox ID="txtCantidad" type="number" runat="server"  class="form-control input-sm" required min="1" max="20"  style="width:100px"
                                     ></asp:TextBox>
 			              </div>
 			            </div>
-                        <br /><br /><br /><br />
+                        <br /><br />
+                     <div style="text-align:center"><asp:Label ID="lblMensaje" runat="server" 
+                             Font-Bold="True" ForeColor="#00CC00"></asp:Label></div>
+                     <br /><br />
 			          <div class="form-group">
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">

@@ -48,12 +48,31 @@ namespace DSconformes.Presentacion.Reservas
                 zona.id_zona = int.Parse(ddlZona.SelectedValue.ToString());
                 rc.Registrar(txtNombre.Text, txtDNI.Text, zona, mesa,new TimeSpan(int.Parse(TxtHora.Text),0,0), 1, int.Parse(txtCantidad.Text),DateTime.Parse( TxtFecha.Text));
 
+                lblMensaje.Text = "Reserva Registrada Correctamente";
 
+                Limpiar();
             }
             catch(Exception ex)
-            { 
-            
+            {
+                lblMensaje.Text = "Error: " + ex.Message;
             }
+        }
+
+        private void Limpiar()
+        {
+            TxtFecha.Text = "";
+            txtCantidad.Text = "";
+            txtDNI.Text = "";
+            TxtHora.Text = "";
+            txtNombre.Text = "";
+            ddlZona.SelectedIndex = 0;
+            ddlMesa.SelectedIndex = 0;
+
+        }
+
+        protected void ddlZona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarMesas();
         }
     }
 }
