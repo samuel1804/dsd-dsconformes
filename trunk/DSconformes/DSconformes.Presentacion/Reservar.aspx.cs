@@ -46,7 +46,7 @@ namespace DSconformes.Presentacion
                 mesa.id_mesa = int.Parse(ddlMesa.SelectedValue.ToString());
                 ws_reserva.Zonas zona = new ws_reserva.Zonas();
                 zona.id_zona = int.Parse(ddlZona.SelectedValue.ToString());
-                rc.Registrar(txtNombre.Text, txtDNI.Text, zona, mesa,TimeSpan.Parse( TxtHora.Text), 1, int.Parse(txtCantidad.Text),DateTime.Parse( TxtFecha.Text));
+                rc.Registrar(txtNombre.Text, txtDNI.Text, zona, mesa,new TimeSpan(int.Parse(TxtHora.Text),0,0), 1, int.Parse(txtCantidad.Text),DateTime.Parse( TxtFecha.Text));
 
 
             }
