@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DSconformes.PlatosService.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DSconformes.PlatosService.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12455/Reserva.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Zonas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="capacidad" type="xs:int" />
+      <xs:element minOccurs="0" name="id_zona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Zonas" nillable="true" type="tns:Zonas" />
+  <xs:complexType name="Mesas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asientos" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" type="xs:int" />
+      <xs:element minOccurs="0" name="id_mesa" type="xs:int" />
+      <xs:element minOccurs="0" name="zona" nillable="true" type="tns:Zonas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mesas" nillable="true" type="tns:Mesas" />
+  <xs:complexType name="Reservas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asistentes" type="xs:int" />
+      <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" type="xs:int" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora_inicio" type="ser:duration" />
+      <xs:element minOccurs="0" name="id_reserva" type="xs:int" />
+      <xs:element minOccurs="0" name="mesa" nillable="true" type="tns:Mesas" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="total_consumo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="zona" nillable="true" type="tns:Zonas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reservas" nillable="true" type="tns:Reservas" />
+</xs:schema>

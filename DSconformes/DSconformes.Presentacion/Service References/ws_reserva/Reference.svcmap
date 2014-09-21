@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6755c5cd-42f0-4545-a6e4-7428abc87045" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:12455/Reserva.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Reserva.xsd" MetadataType="Schema" ID="39b3afea-b4f9-439a-9fc1-2948b029b498" SourceId="1" SourceUrl="http://localhost:12455/Reserva.svc?xsd=xsd1" />
+    <MetadataFile FileName="Reserva.wsdl" MetadataType="Wsdl" ID="612e313e-54cc-446b-921f-f7524f28d3fe" SourceId="1" SourceUrl="http://localhost:12455/Reserva.svc?wsdl" />
+    <MetadataFile FileName="Reserva.disco" MetadataType="Disco" ID="710a3c96-c00f-465c-a955-ea16c4fa30c2" SourceId="1" SourceUrl="http://localhost:12455/Reserva.svc?disco" />
+    <MetadataFile FileName="Reserva1.xsd" MetadataType="Schema" ID="a1ebe8df-26e2-441b-95b2-b61a8a589132" SourceId="1" SourceUrl="http://localhost:12455/Reserva.svc?xsd=xsd2" />
+    <MetadataFile FileName="Reserva2.xsd" MetadataType="Schema" ID="6d1336c9-15a3-4825-b1d5-46e69c81b685" SourceId="1" SourceUrl="http://localhost:12455/Reserva.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
