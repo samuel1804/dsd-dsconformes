@@ -12,13 +12,13 @@ namespace DSconformes.PlatosService
     public class Reserva : IReserva
     {
         private ReservaDAO rs = new ReservaDAO();
-        public Reservas Registrar(string nombre, string dni, int id_zona, int id_mesa, TimeSpan hora_inicio, int estado, int asistentes,DateTime fecha)
+        public Reservas Registrar(string nombre, string dni, Zonas zona, Mesas mesa, TimeSpan hora_inicio, int estado, int asistentes,DateTime fecha)
         {
           Reservas reservas=new Reservas();
           reservas.nombre=nombre;
           reservas.dni = dni;
-          reservas.id_zona = id_zona;
-          reservas.id_mesa = id_mesa;
+          reservas.zona = zona;
+          reservas.mesa = mesa;
           reservas.hora_inicio = hora_inicio;
           reservas.estado = estado;
           reservas.asistentes = asistentes;
