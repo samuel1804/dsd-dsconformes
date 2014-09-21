@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DSconformes;
 
-namespace DSconformes.Presentacion
+namespace DSconformes.Presentacion.Reservas
 {
     public partial class Reservar : System.Web.UI.Page
     {

@@ -58,8 +58,20 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Styles\Site.css" />
+    <Content Include="Mesas\DetalleMesa.aspx" />
+    <Content Include="Mesas\Mesas.aspx" />
+    <Content Include="Zonas\Zonas.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Mesero.aspx" />
+    <Content Include="Mesero\Mesero.aspx" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -74,6 +86,11 @@
     <Content Include="Scripts\MicrosoftMvcAjax.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <None Include="Content\css\bootstrap-theme.css.map" />
+    <None Include="Content\css\bootstrap.css.map" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Service References\ws_mesa\DSconformes.Presentacion.ws_mesa.Mesas.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -139,9 +156,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Platos.aspx" />
+    <Content Include="Plato\Platos.aspx" />
     <Content Include="WebForm1.aspx" />
-    <Content Include="Reservar.aspx" />
+    <Content Include="Reservas\Reservar.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -179,14 +196,35 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mesas\DetalleMesa.aspx.cs">
+      <DependentUpon>DetalleMesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mesas\DetalleMesa.aspx.designer.cs">
+      <DependentUpon>DetalleMesa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mesas\Mesas.aspx.cs">
+      <DependentUpon>Mesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mesas\Mesas.aspx.designer.cs">
+      <DependentUpon>Mesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zonas\Zonas.aspx.cs">
+      <DependentUpon>Zonas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Zonas\Zonas.aspx.designer.cs">
+      <DependentUpon>Zonas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mesero.aspx.cs">
+    <Compile Include="Mesero\Mesero.aspx.cs">
       <DependentUpon>Mesero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Mesero.aspx.designer.cs">
+    <Compile Include="Mesero\Mesero.aspx.designer.cs">
       <DependentUpon>Mesero.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,18 +248,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Site.Master.cs">
+    <Compile Include="Master\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
+    <Compile Include="Master\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Platos.aspx.cs">
+    <Compile Include="Plato\Platos.aspx.cs">
       <DependentUpon>Platos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Platos.aspx.designer.cs">
+    <Compile Include="Plato\Platos.aspx.designer.cs">
       <DependentUpon>Platos.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
@@ -231,22 +269,20 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reservar.aspx.cs">
+    <Compile Include="Reservas\Reservar.aspx.cs">
       <DependentUpon>Reservar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reservar.aspx.designer.cs">
+    <Compile Include="Reservas\Reservar.aspx.designer.cs">
       <DependentUpon>Reservar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Mesero\" />
-    <Folder Include="Plato\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
-    <Content Include="Site.Master" />
+    <Content Include="Master\Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ws_zona\Zona.wsdl" />

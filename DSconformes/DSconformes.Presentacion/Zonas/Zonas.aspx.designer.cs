@@ -7,54 +7,36 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DSconformes.Presentacion {
+namespace DSconformes.Presentacion.Zonas {
     
     
-    public partial class SiteMaster {
+    public partial class Zonas {
         
         /// <summary>
-        /// Control Head1.
+        /// Control hlMesa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.WebControls.HyperLink hlMesa;
         
         /// <summary>
-        /// Control TitleContent.
+        /// Control hlMesa0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitleContent;
+        protected global::System.Web.UI.WebControls.HyperLink hlMesa0;
         
         /// <summary>
-        /// Control form.
+        /// Control hlMesa1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form;
-        
-        /// <summary>
-        /// Control smManager.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager smManager;
-        
-        /// <summary>
-        /// Control MainContent.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.HyperLink hlMesa1;
     }
 }
