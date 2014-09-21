@@ -13,6 +13,6 @@ namespace DSconformes.PlatosService
     public interface IReserva
     {
         [OperationContract]
-        Reservas Registrar(string nombre, string dni, int id_zona, int id_mesa, TimeSpan hora_inicio, int estado, int asistentes, DateTime fecha);
+        Reservas Registrar(string nombre, string dni, Zonas zona, Mesas mesa, TimeSpan hora_inicio, int estado, int asistentes, DateTime fecha);
     }
 }
