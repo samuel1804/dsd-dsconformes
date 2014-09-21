@@ -34,11 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Iesi.Collections">
-      <HintPath>E:\JCabanillas\Argot\DSconformes\DSconformes\bin\Iesi.Collections.dll</HintPath>
+      <HintPath>..\Librerias\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NHibernate">
-      <HintPath>E:\JCabanillas\Argot\DSconformes\DSconformes\bin\NHibernate.dll</HintPath>
+      <HintPath>..\Librerias\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -60,13 +60,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Categoria.svc" />
-    <Content Include="Dominio\Categorias.hbm.xml" />
-    <Content Include="Dominio\Mesas.hbm.xml" />
-    <Content Include="Dominio\Meseros.hbm.xml" />
-    <Content Include="Dominio\Platos.hbm.xml" />
-    <Content Include="Dominio\Reservas.hbm.xml" />
-    <Content Include="Dominio\Reserva_Detalles.hbm.xml" />
-    <Content Include="Dominio\Zonas.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Categorias.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Mesas.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Meseros.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Platos.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Reservas.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dominio\Reserva_Detalles.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Zonas.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Content Include="Mesa.svc" />
     <Content Include="Mesero.svc" />
     <Content Include="Plato.svc" />
