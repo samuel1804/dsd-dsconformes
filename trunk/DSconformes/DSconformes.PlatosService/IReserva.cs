@@ -14,5 +14,9 @@ namespace DSconformes.PlatosService
     {
         [OperationContract]
         Reservas Registrar(string nombre, string dni, Zonas zona, Mesas mesa, TimeSpan hora_inicio, int estado, int asistentes, DateTime fecha);
+        [OperationContract]
+        List<Reservas> Listar();
+        [OperationContract]
+        Reservas Obtener(int id_reserva);
     }
 }

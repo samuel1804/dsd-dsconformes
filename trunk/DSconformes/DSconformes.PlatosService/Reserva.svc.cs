@@ -29,7 +29,12 @@ namespace DSconformes.PlatosService
             
         }
 
-
+        public List<Reservas> Listar() {
+            return rs.ListarTodos().ToList();
+        }
+        public Reservas Obtener(int id_reserva) {
+            return rs.Obtener(id_reserva);
+        }
         
     }
     }
