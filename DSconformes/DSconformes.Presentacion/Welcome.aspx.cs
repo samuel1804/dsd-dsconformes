@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace DSconformes.Presentacion
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Welcome : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
