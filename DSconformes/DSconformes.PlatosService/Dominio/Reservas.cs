@@ -17,9 +17,9 @@ namespace DSconformes.PlatosService.Dominio
         [DataMember]
         public string dni { get; set; }
         [DataMember]
-        public int id_zona { get; set; }
+        public Zonas zona { get; set; }
         [DataMember]
-        public int id_mesa { get; set; }
+        public Mesas mesa { get; set; }
         [DataMember]
         public TimeSpan hora_inicio { get; set; }
         [DataMember]
