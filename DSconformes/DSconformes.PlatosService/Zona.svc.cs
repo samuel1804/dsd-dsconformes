@@ -11,10 +11,23 @@ namespace DSconformes.PlatosService
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Zona" en el código, en svc y en el archivo de configuración a la vez.
     public class Zona : IZona
     {
-        ZonaDAO zd = new ZonaDAO();
+      
+
+        private ZonaDAO zonaDAO = null;
+        private ZonaDAO ZonaDAO
+        {
+            get
+            {
+                if (zonaDAO == null)
+                    zonaDAO = new ZonaDAO();
+                return zonaDAO;
+            }
+        }
+
         public List<Zonas> ListarZonas()
         {
-            return zd.ListarTodos().ToList();
+            return ZonaDAO.ListarTodos().ToList();
         }
+
     }
 }

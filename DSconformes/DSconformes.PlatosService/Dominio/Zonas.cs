@@ -14,7 +14,13 @@ namespace DSconformes.PlatosService.Dominio
         [DataMember]
         public string nombre { get; set; }
         [DataMember]
+        public string descripcion { get; set; }
+        [DataMember]
+        public int minimo { get; set; }
+        [DataMember]
         public int capacidad { get; set; }
+        [DataMember]
+        public bool habilitado { get; set; }
 
     }
 }

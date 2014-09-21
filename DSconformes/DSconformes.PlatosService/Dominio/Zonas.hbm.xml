@@ -9,6 +9,9 @@
       <generator class="increment"  />
     </id>
     <property name="nombre" column="nombre" />
+    <property name="descripcion" column="descripcion" />
+    <property name="minimo" column="minimo" />
     <property name="capacidad" column="capacidad" />
+    <property name="habilitado" column="habilitado" />
   </class>
 </hibernate-mapping>
