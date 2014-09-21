@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reservar.aspx.cs" Inherits="DSconformes.Presentacion.Reservar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" CodeBehind="Reservar.aspx.cs" Inherits="DSconformes.Presentacion.Reservas.Reservar" %>
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="TitleContent" runat="server">

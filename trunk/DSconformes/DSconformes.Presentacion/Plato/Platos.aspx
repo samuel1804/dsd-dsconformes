@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" Inherits="DSconformes.Presentacion.Platos" CodeBehind="Platos.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" Inherits="DSconformes.Presentacion.Platos.Platos" CodeBehind="Platos.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
