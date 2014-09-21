@@ -58,6 +58,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Categoria\Categorias.aspx" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -67,8 +68,10 @@
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Styles\Site.css" />
+    <Content Include="frmLogin.aspx" />
     <Content Include="Mesas\DetalleMesa.aspx" />
     <Content Include="Mesas\Mesas.aspx" />
+    <Content Include="Welcome.aspx" />
     <Content Include="Zonas\Zonas.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Mesero\Mesero.aspx" />
@@ -157,7 +160,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Plato\Platos.aspx" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="Reservas\Reservar.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +198,20 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Categoria\Categorias.aspx.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categoria\Categorias.aspx.designer.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.aspx.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLogin.aspx.designer.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mesas\DetalleMesa.aspx.cs">
       <DependentUpon>DetalleMesa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,6 +225,13 @@
     </Compile>
     <Compile Include="Mesas\Mesas.aspx.designer.cs">
       <DependentUpon>Mesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zonas\Zonas.aspx.cs">
       <DependentUpon>Zonas.aspx</DependentUpon>
@@ -261,13 +284,6 @@
     </Compile>
     <Compile Include="Plato\Platos.aspx.designer.cs">
       <DependentUpon>Platos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reservas\Reservar.aspx.cs">
       <DependentUpon>Reservar.aspx</DependentUpon>

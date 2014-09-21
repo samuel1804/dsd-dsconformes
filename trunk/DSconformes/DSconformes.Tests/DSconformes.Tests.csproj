@@ -61,12 +61,6 @@
   <ItemGroup>
     <Content Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DSconformes\DSconformes.csproj">
-      <Project>{C3E13E1B-4EF9-4694-AD64-A043CBCA549E}</Project>
-      <Name>DSconformes</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
