@@ -13,9 +13,9 @@
     <many-to-one name ="mesa" column="id_mesa" />
     <property name="sexo" column="sexo" />
     <property name="edad" column="edad" />
-
-
-
+    <property name="h_entrada" column="h_entrada" type="TimeAsTimeSpan"/>
+    <property name="h_salida" column="h_salida" type="TimeAsTimeSpan"/>
+    
   </class>
 </hibernate-mapping>
 

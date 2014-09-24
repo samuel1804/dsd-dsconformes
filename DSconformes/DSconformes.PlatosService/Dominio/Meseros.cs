@@ -21,6 +21,10 @@ namespace DSconformes.PlatosService.Dominio
     public char sexo { get; set; }
     [DataMember]
     public int edad { get; set; }
+    [DataMember]
+    public TimeSpan h_entrada { get; set; }
+    [DataMember]
+    public TimeSpan h_salida { get; set; }
     }
 
 }

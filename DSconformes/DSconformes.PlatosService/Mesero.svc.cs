@@ -4,13 +4,15 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DSconformes.Persistencia;
+using DSconformes.PlatosService.Dominio;
 
 namespace DSconformes.PlatosService
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Mesero" en el código, en svc y en el archivo de configuración a la vez.
     public class Mesero : IMesero
     {
-        public void DoWork()
+        private MeseroDAO me =  new MeseroDAO();
+        public  Meseros Registrar
         {
         }
     }
