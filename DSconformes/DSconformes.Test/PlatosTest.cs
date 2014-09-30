@@ -3,7 +3,10 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+//using DSconformes.Dominio;
+using System.Net;
+using System.IO;
+using System.Web.Script.Serialization;
 namespace DSconformes.Test
 {
     /// <summary>
@@ -15,6 +18,24 @@ namespace DSconformes.Test
         [TestMethod]
         public void Insertar()
         {
+            //Prueba de modificar
+
+            string postdata = "{\"id_plato\":21,\"nombre\":\"Ceviche\",\"categoria\":2,\"costo\":20,\"descripcion\":\"Ceviche\"}";
+            byte[] data = Encoding.UTF8.GetBytes(postdata);
+
+            HttpWebRequest req = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
+            req.Method = "POST";
+            req.ContentLength = data.Length;
+            req.ContentType = "application/json";
+            var reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+            var res = req.GetResponse() as HttpWebResponse;
+            StreamReader reader = new StreamReader(res.GetResponseStream());
+            string platojson = reader.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Platos platomodif = js.Deserialize<Platos>(platojson);
+            Assert.AreEqual(platomodif.descripcion, "Ceviche");
+
             
         }
     }
