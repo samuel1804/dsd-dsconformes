@@ -13,7 +13,7 @@ namespace DSconformes.PlatosService.Dominio
         [DataMember]
         public string nombre { get; set; }
         [DataMember]
-        public Categorias categoria { get; set; }
+        public int categoria { get; set; }
         [DataMember]
         public decimal costo { get; set; }
         [DataMember]
