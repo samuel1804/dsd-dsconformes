@@ -198,6 +198,7 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Categorias.cs" />
     <Compile Include="Categoria\Categorias.aspx.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
