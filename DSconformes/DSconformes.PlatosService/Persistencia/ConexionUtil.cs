@@ -10,7 +10,7 @@ namespace DSconformes.Persistencia
         public static string ObtenerCadena()
         {
 
-            return "Data Source=USER-PC;Initial Catalog=DSD_Restaurante;Integrated Security=SSPI;";
+            return @"Data Source=.\SQL2008_2;Initial Catalog=Restaurante;Integrated Security=SSPI;";
 
         }
 
