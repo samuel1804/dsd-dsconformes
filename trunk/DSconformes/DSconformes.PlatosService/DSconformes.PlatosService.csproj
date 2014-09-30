@@ -63,7 +63,6 @@
     <EmbeddedResource Include="Dominio\Categorias.hbm.xml" />
     <EmbeddedResource Include="Dominio\Mesas.hbm.xml" />
     <EmbeddedResource Include="Dominio\Meseros.hbm.xml" />
-    <EmbeddedResource Include="Dominio\Platos.hbm.xml" />
     <EmbeddedResource Include="Dominio\Reservas.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -72,7 +71,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="Mesa.svc" />
-    <Content Include="Mesero.svc" />
     <Content Include="Plato.svc" />
     <Content Include="Reserva.svc" />
     <Content Include="Web.config" />
@@ -97,15 +95,11 @@
     <Compile Include="Dominio\Zonas.cs" />
     <Compile Include="ICategoria.cs" />
     <Compile Include="IMesa.cs" />
-    <Compile Include="IMesero.cs" />
     <Compile Include="IPlato.cs" />
     <Compile Include="IReserva.cs" />
     <Compile Include="IZona.cs" />
     <Compile Include="Mesa.svc.cs">
       <DependentUpon>Mesa.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Mesero.svc.cs">
-      <DependentUpon>Mesero.svc</DependentUpon>
     </Compile>
     <Compile Include="Persistencia\BaseDAO.cs" />
     <Compile Include="Persistencia\CategoriaDAO.cs" />
