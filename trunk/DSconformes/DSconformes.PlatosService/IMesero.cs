@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using DSconformes.PlatosService.Dominio;
+using System.ServiceModel.Web;
 
 namespace DSconformes.PlatosService
 {
@@ -12,15 +13,25 @@ namespace DSconformes.PlatosService
     public interface IMesero
     {
         [OperationContract]
-        Meseros Registrar(int dni, string nombre, Mesas mesa, char sexo, int edad, TimeSpan h_entrada, TimeSpan h_salida);
+        [WebInvoke(Method = "POST", UriTemplate="Meseros", ResponseFormat=WebMessageFormat.Json)]
+        Meseros CrearMesero(Meseros meseroACrear);
+        
         [OperationContract]
-        Meseros Actualizar(int dni, string nombre, Mesas mesa, char sexo, int edad, TimeSpan h_entrada, TimeSpan h_salida);
+        [WebInvoke(Method = "GET", UriTemplate = "Meseros/{id_mesero}", ResponseFormat = WebMessageFormat.Json)]
+        Meseros ObtenerMesero(int id_mesero);
+        
         [OperationContract]
-        Meseros Obtener(int id_mesa);
+        [WebInvoke(Method = "PUT", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
+        Meseros ModificarMesero(Meseros meseroAModificar);
+        
         [OperationContract]
-        List<Meseros> Listar();
+        [WebInvoke(Method = "DELETE", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
+        bool EliminarMesero(Meseros meseroAModificar);
+        
         [OperationContract]
-        Meseros Eliminar(int dni);
+        [WebInvoke(Method = "GET", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
+        List<Meseros> ListarMeseros();
+
 
     }
 }
