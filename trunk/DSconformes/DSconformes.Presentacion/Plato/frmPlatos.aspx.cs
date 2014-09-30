@@ -8,17 +8,35 @@ using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
 using System.Text;
-namespace DSconformes.Presentacion.Platos
+
+
+namespace DSconformes.Presentacion.Plato
 {
-    public partial class Platos : System.Web.UI.Page
+    public partial class frmPlatos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
 
         }
-        private void CargarCodigo() { 
-        
+        private void Limpiar(){
+            txtCodigo.Text="";
+            txtnombre.Text="";
+            txtDescripcion.Text = "";
+            ddlCategoria.SelectedIndex = 0;
+
+        }
+        private void CargarCodigo() {
+            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string platojson = reader2.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Platos platoobtenido = js.Deserialize<Platos>(platojson);
+            txtCodigo.Text = platoobtenido.id_plato.ToString();
+
+
         }
 
         protected void BtnGrabar_Click(object sender, EventArgs e)
@@ -27,7 +45,7 @@ namespace DSconformes.Presentacion.Platos
             {
                 //Prueba de modificar
                 CargarCodigo();
-                string postdata = "{\"id_plato\":22,\"nombre\":\""+txtnombre.Text+"\",\"categoria\":2,\"costo\":20,\"descripcion\":\""+txtDescripcion.Text+"\"}";
+                string postdata = "{\"id_plato\":"+Int32.Parse(txtCodigo.Text)+",\"nombre\":\""+txtnombre.Text+"\",\"categoria\":"+ddlCategoria.SelectedValue+",\"costo\":"+decimal.Parse(txtPrecio.Text)+",\"descripcion\":\""+txtDescripcion.Text+"\"}";
                 byte[] data = Encoding.UTF8.GetBytes(postdata);
 
                 HttpWebRequest req = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
@@ -40,11 +58,12 @@ namespace DSconformes.Presentacion.Platos
                 StreamReader reader = new StreamReader(res.GetResponseStream());
                 string platojson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
-                Platos platomodif = js.Deserialize<Platos>(platojson);
+                frmPlatos platomodif = js.Deserialize<frmPlatos>(platojson);
 
 
                 lblMensaje.Text = "Plato Registrado Correctamente";
-
+                Limpiar();
+                CargarCodigo();
                 //Assert.AreEqual(platomodif.descripcion, "Ceviche");
 
             }
