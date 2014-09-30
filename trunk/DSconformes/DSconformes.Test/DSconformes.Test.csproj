@@ -48,8 +48,9 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlatosTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservacion.cs" />
+    <Compile Include="ReservacionTest.cs" />
     <Compile Include="Service References\ws_reserva\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

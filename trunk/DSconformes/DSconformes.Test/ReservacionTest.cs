@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DSconformes.Test
 {
     [TestClass]
-    public class Reservacion
+    public class ReservacionTest
     {
         [TestMethod]
         public void Registrarreserva()
