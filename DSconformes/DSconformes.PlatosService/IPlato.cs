@@ -20,6 +20,6 @@ namespace DSconformes.PlatosService
 
         [WebInvoke(Method = "GET", UriTemplate = "Platos", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        Platos ObtenerUltimo(int id_plato);
+        Platos ObtenerUltimo();
     }
 }

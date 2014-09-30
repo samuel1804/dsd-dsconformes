@@ -11,6 +11,8 @@ namespace DSconformes.PlatosService.Dominio
         [DataMember]
         public int id_plato { get; set; }
         [DataMember]
+        public string codigo { get; set; }
+        [DataMember]
         public string nombre { get; set; }
         [DataMember]
         public int categoria { get; set; }

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DSconformes.PlatosService.Dominio;
+using System.ServiceModel.Web;
+
 
 namespace DSconformes.PlatosService
 {
@@ -11,7 +14,8 @@ namespace DSconformes.PlatosService
     [ServiceContract]
     public interface ICategoria
     {
+        [WebInvoke(Method = "GET", UriTemplate = "Platos", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        void DoWork();
+        List<Categorias> Listar();
     }
 }
