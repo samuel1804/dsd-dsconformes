@@ -38,5 +38,18 @@ namespace DSconformes.Test
 
             
         }
+
+        [TestMethod]
+        public void ObtenerUltimo() {
+            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string platojson = reader2.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Platos platoobtenido = js.Deserialize<Platos>(platojson);
+            Assert.AreEqual(22, platoobtenido.id_plato);
+
+        }
     }
 }
