@@ -11,9 +11,31 @@ namespace DSconformes.PlatosService
 {
     public class Mesero : IMesero
     {
-        private MeseroDAO me =  new MeseroDAO();
-        public  Meseros Registrar
+        private MeseroDAO dao = new MeseroDAO();
+
+        public Meseros CrearMesero(Meseros meseroACrear)
         {
+            return dao.Crear(meseroACrear);
+        }
+
+        public Meseros ObtenerMesero(int id_mesero)
+        {
+            return dao.Obtener(id_mesero);
+        }
+
+        public Meseros ModificarMesero(Meseros meseroAModificar)
+        {
+            return dao.Modificar(meseroAModificar);
+        }
+
+        public bool EliminarMesero(Meseros meseroAModificar)
+        {
+            return dao.Eliminar(meseroAModificar);
+        }
+
+        public List<Meseros> ListarMeseros()
+        {
+            return dao.ListarTodos();
         }
     }
 }
