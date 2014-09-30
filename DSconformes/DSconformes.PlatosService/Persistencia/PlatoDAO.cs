@@ -30,5 +30,40 @@ namespace DSconformes.Persistencia
 
             return pbePlato;
         }
+
+
+        public Platos ObtenerUltimo(int id_plato)
+        {
+
+            string sql = "Select * from t_plato where id_plato=@id_plato";
+            Platos plato = new Platos(); 
+           
+            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
+            {
+
+                con.Open();
+                using (SqlCommand com = new SqlCommand(sql, con))
+                {
+
+                    using (SqlDataReader dr = com.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            plato = new Platos()
+                            {
+                                id_plato = (int)dr["IdPlato"],
+                            };
+                          
+                        }
+
+
+                    }
+                }
+            }
+
+            return plato;
+        }
+
+
     }
 }

@@ -159,7 +159,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Plato\Platos.aspx" />
+    <Content Include="Plato\frmPlatos.aspx" />
     <Content Include="Reservas\Reservar.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +226,7 @@
     <Compile Include="Mesas\Mesas.aspx.designer.cs">
       <DependentUpon>Mesas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Platos.cs" />
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,12 +279,12 @@
     <Compile Include="Master\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Plato\Platos.aspx.cs">
-      <DependentUpon>Platos.aspx</DependentUpon>
+    <Compile Include="Plato\frmPlatos.aspx.cs">
+      <DependentUpon>frmPlatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Plato\Platos.aspx.designer.cs">
-      <DependentUpon>Platos.aspx</DependentUpon>
+    <Compile Include="Plato\frmPlatos.aspx.designer.cs">
+      <DependentUpon>frmPlatos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reservas\Reservar.aspx.cs">
       <DependentUpon>Reservar.aspx</DependentUpon>

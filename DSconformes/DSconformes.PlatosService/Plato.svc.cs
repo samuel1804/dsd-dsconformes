@@ -18,5 +18,11 @@ namespace DSconformes.PlatosService
         {
             return dao.Insertar(pbePlato);
         }
+
+
+        public Platos ObtenerUltimo(int id_plato)
+        {
+            return dao.ObtenerUltimo(id_plato);
+        }
     }
 }

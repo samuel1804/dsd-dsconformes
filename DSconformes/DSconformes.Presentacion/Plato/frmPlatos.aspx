@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" Inherits="DSconformes.Presentacion.Platos.Platos" CodeBehind="Platos.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" Inherits="DSconformes.Presentacion.Plato.frmPlatos" CodeBehind="frmPlatos.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
@@ -34,7 +34,8 @@
 			                <label class="form-label">Codigo</label>
 			              </div>
 			              <div class="col-sm-10">
-			                  <asp:TextBox ID="txtCodigo" runat="server" class="form-control input-sm"  ></asp:TextBox>
+			                  <asp:TextBox ID="txtCodigo" runat="server" class="form-control input-sm" 
+                                  ReadOnly="True"  ></asp:TextBox>
 			              </div>
 			            </div>
 			            <br /><br />
@@ -44,7 +45,7 @@
 			              </div>
 			              <div>
 			                <div class="col-sm-10">
-			                    <asp:DropDownList ID="TxtTemas" runat="server" class="form-control" 
+			                    <asp:DropDownList ID="ddlCategoria" runat="server" class="form-control" 
                                     TextMode="MultiLine">
                                     <asp:ListItem Text="Ensaladas" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="Carnes" Value="1"></asp:ListItem>
@@ -74,7 +75,7 @@
 			              </div>
 			              <div>
 			                <div class="col-sm-10">
-			                    <asp:TextBox ID="TextBox2" runat="server" class="form-control" 
+			                    <asp:TextBox ID="txtPrecio" runat="server" class="form-control" 
                                     required placeholder="0,00" ></asp:TextBox>
 			                </div>
 			              </div>
