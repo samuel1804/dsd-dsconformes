@@ -49,6 +49,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categorias.cs" />
+    <Compile Include="CategoriaTest.cs" />
     <Compile Include="Platos.cs" />
     <Compile Include="PlatosTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
