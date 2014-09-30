@@ -47,11 +47,7 @@
 			                <div class="col-sm-10">
 			                    <asp:DropDownList ID="ddlCategoria" runat="server" class="form-control" 
                                     TextMode="MultiLine">
-                                    <asp:ListItem Text="Ensaladas" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Carnes" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Vinos" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Postres" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Gaseosas" Value="1"></asp:ListItem>
+                                   
                                     </asp:DropDownList>
 			                </div>
 			              </div>

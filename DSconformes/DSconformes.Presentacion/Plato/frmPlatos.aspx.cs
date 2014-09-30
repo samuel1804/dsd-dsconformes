@@ -16,7 +16,21 @@ namespace DSconformes.Presentacion.Plato
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CargarCodigo();
+            CargarCategorias();
+        }
+        private void CargarCategorias() {
+            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Categoria.svc/Categorias") as HttpWebRequest;
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string platojson = reader2.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            List<Categorias> platoobtenido = js.Deserialize<List<Categorias>>(platojson);
+            ddlCategoria.DataSource = platoobtenido;
+            ddlCategoria.DataTextField = "nombre";
+            ddlCategoria.DataValueField = "id_categoria";
+            ddlCategoria.DataBind();
 
         }
         private void Limpiar(){
@@ -24,7 +38,7 @@ namespace DSconformes.Presentacion.Plato
             txtnombre.Text="";
             txtDescripcion.Text = "";
             ddlCategoria.SelectedIndex = 0;
-
+            txtPrecio.Text = "";
         }
         private void CargarCodigo() {
             HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
@@ -34,7 +48,7 @@ namespace DSconformes.Presentacion.Plato
             string platojson = reader2.ReadToEnd();
             JavaScriptSerializer js = new JavaScriptSerializer();
             Platos platoobtenido = js.Deserialize<Platos>(platojson);
-            txtCodigo.Text = platoobtenido.id_plato.ToString();
+            txtCodigo.Text = (platoobtenido.id_plato+1).ToString() ?? "0";
 
 
         }
