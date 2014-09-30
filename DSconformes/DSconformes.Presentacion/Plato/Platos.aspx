@@ -62,7 +62,7 @@
 			              </div>
 			              <div>
 			                <div class="col-sm-10">
-			                    <asp:TextBox ID="TextBox1" runat="server" class="form-control" 
+			                    <asp:TextBox ID="txtnombre" runat="server" class="form-control" 
                                     required placeholder="Ingrese Nombre del Plato" ></asp:TextBox>
 			                </div>
 			              </div>
@@ -80,12 +80,31 @@
 			              </div>
 			            </div>
                         <br /><br />
+                         <div class="form-group">
+			              <div class="col-sm-2">
+			                <label class="form-label">Descripcion</label>
+			              </div>
+			              <div>
+			                <div class="col-sm-10">
+			                    <asp:TextBox ID="txtDescripcion" runat="server" class="form-control" 
+                                    required placeholder="Ingrese Descripcion del Plato" ></asp:TextBox>
+			                </div>
+			              </div>
+			            </div>
+                        <br /><br />
+                         <div style="text-align:center"><asp:Label ID="lblMensaje" runat="server" 
+                             Font-Bold="True" ForeColor="#00CC00"></asp:Label></div>
+                             <br />
+                        <br />
+
+                        
 
 			          <div class="form-group">
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" class="btn btn-primary" 
+					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" 
+                                        class="btn btn-primary" onclick="BtnGrabar_Click" 
                                         />			              			             
                                     <asp:Button ID="btnEliminar" runat="server" class="btn btn-primary" 
                                         Text="Eliminar" />			              			             
