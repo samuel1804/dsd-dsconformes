@@ -13,10 +13,10 @@ namespace DSconformes.PlatosService
     public class Plato : IPlato
     {
 
-        private platodao
+        private PlatoDAO dao = new PlatoDAO();
         public Dominio.Platos Insertar(Dominio.Platos pbePlato)
         {
-            return
+            return dao.Insertar(pbePlato);
         }
     }
 }
