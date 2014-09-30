@@ -32,10 +32,10 @@ namespace DSconformes.Persistencia
         }
 
 
-        public Platos ObtenerUltimo(int id_plato)
+        public Platos ObtenerUltimo()
         {
 
-            string sql = "Select * from t_plato where id_plato=@id_plato";
+            string sql = "Select * from t_plato order by id_plato desc";
             Platos plato = new Platos(); 
            
             using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
@@ -44,14 +44,14 @@ namespace DSconformes.Persistencia
                 con.Open();
                 using (SqlCommand com = new SqlCommand(sql, con))
                 {
-
+                   
                     using (SqlDataReader dr = com.ExecuteReader())
                     {
                         if (dr.Read())
                         {
                             plato = new Platos()
                             {
-                                id_plato = (int)dr["IdPlato"],
+                                id_plato = (int)dr["id_plato"],
                             };
                           
                         }

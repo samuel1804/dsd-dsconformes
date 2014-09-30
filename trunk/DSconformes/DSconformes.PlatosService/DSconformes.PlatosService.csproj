@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Categoria.svc" />
-    <EmbeddedResource Include="Dominio\Categorias.hbm.xml" />
     <EmbeddedResource Include="Dominio\Mesas.hbm.xml" />
     <EmbeddedResource Include="Dominio\Meseros.hbm.xml" />
     <EmbeddedResource Include="Dominio\Reservas.hbm.xml">

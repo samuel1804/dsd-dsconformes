@@ -20,9 +20,9 @@ namespace DSconformes.PlatosService
         }
 
 
-        public Platos ObtenerUltimo(int id_plato)
+        public Platos ObtenerUltimo()
         {
-            return dao.ObtenerUltimo(id_plato);
+            return dao.ObtenerUltimo();
         }
     }
 }
