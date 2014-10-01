@@ -91,6 +91,8 @@
                         <br /><br />
                          <div style="text-align:center"><asp:Label ID="lblMensaje" runat="server" 
                              Font-Bold="True" ForeColor="#00CC00"></asp:Label></div>
+                             <div style="text-align:center"><asp:Label ID="lblMensajeError" runat="server" 
+                             Font-Bold="True" ForeColor=Red></asp:Label></div>
                              <br />
                         <br />
 
@@ -102,11 +104,13 @@
 					            <div class="col-md-12" align="center">
 					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" 
                                         class="btn btn-primary" onclick="BtnGrabar_Click" 
-                                        />			              			             
-                                    <asp:Button ID="btnEliminar" runat="server" class="btn btn-primary" 
+                                        />		
+                                        <asp:Button ID="btnLimpiar" runat="server" class="btn btn-primary" 
+                                        Text="Limpiar" onclick="btnLimpiar_Click" />	              			             
+                                    <%--<asp:Button ID="btnEliminar" runat="server" class="btn btn-primary" 
                                         Text="Eliminar" />			              			             
                                     <asp:Button ID="btnActualizar" runat="server" class="btn btn-primary" 
-                                        Text="Actualizar" />			              			             
+                                        Text="Actualizar" />--%>			              			             
 					            </div>
 					          </div>	
 				          </c:if>	

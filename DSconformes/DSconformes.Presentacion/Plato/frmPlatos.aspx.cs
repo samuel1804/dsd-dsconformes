@@ -18,7 +18,9 @@ namespace DSconformes.Presentacion.Plato
         {
             CargarCodigo();
             CargarCategorias();
+            
         }
+        
         private void CargarCategorias() {
             HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Categoria.svc/Categorias") as HttpWebRequest;
             req2.Method = "GET";
@@ -39,6 +41,7 @@ namespace DSconformes.Presentacion.Plato
             txtDescripcion.Text = "";
             ddlCategoria.SelectedIndex = 0;
             txtPrecio.Text = "";
+            
         }
         private void CargarCodigo() {
             HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
@@ -57,34 +60,50 @@ namespace DSconformes.Presentacion.Plato
         {
             try
             {
-                //Prueba de modificar
-                CargarCodigo();
-                string postdata = "{\"id_plato\":"+Int32.Parse(txtCodigo.Text)+",\"nombre\":\""+txtnombre.Text+"\",\"categoria\":"+ddlCategoria.SelectedValue+",\"costo\":"+decimal.Parse(txtPrecio.Text)+",\"descripcion\":\""+txtDescripcion.Text+"\"}";
-                byte[] data = Encoding.UTF8.GetBytes(postdata);
+                if (txtPrecio.Text == "0")
+                {
+                    lblMensajeError.Text = "Precio no debe ser 0";
+                }
+                else
+                {
+                    //Prueba de modificar
+                    CargarCodigo();
+                    string postdata = "{\"id_plato\":" + Int32.Parse(txtCodigo.Text) + ",\"nombre\":\"" + txtnombre.Text + "\",\"categoria\":" + ddlCategoria.SelectedValue + ",\"costo\":" + decimal.Parse(txtPrecio.Text) + ",\"descripcion\":\"" + txtDescripcion.Text + "\"}";
+                    byte[] data = Encoding.UTF8.GetBytes(postdata);
 
-                HttpWebRequest req = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
-                req.Method = "POST";
-                req.ContentLength = data.Length;
-                req.ContentType = "application/json";
-                var reqStream = req.GetRequestStream();
-                reqStream.Write(data, 0, data.Length);
-                var res = req.GetResponse() as HttpWebResponse;
-                StreamReader reader = new StreamReader(res.GetResponseStream());
-                string platojson = reader.ReadToEnd();
-                JavaScriptSerializer js = new JavaScriptSerializer();
-                frmPlatos platomodif = js.Deserialize<frmPlatos>(platojson);
+                    HttpWebRequest req = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
+                    req.Method = "POST";
+                    req.ContentLength = data.Length;
+                    req.ContentType = "application/json";
+                    var reqStream = req.GetRequestStream();
+                    reqStream.Write(data, 0, data.Length);
+                    var res = req.GetResponse() as HttpWebResponse;
+                    StreamReader reader = new StreamReader(res.GetResponseStream());
+                    string platojson = reader.ReadToEnd();
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    frmPlatos platomodif = js.Deserialize<frmPlatos>(platojson);
 
 
-                lblMensaje.Text = "Plato Registrado Correctamente";
-                Limpiar();
-                CargarCodigo();
-                //Assert.AreEqual(platomodif.descripcion, "Ceviche");
-
+                    lblMensaje.Text = "Plato Registrado Correctamente";
+                    Limpiar();
+                    CargarCodigo();
+                    //Assert.AreEqual(platomodif.descripcion, "Ceviche");
+                }
             }
             catch (Exception ex) {
 
                 lblMensaje.Text = "Error: " + ex.Message;
             }
+        }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtnombre.Text = "";
+            txtDescripcion.Text = "";
+            ddlCategoria.SelectedIndex = 0;
+            txtPrecio.Text = "";
+            lblMensajeError.Text = "";
+            lblMensaje.Text = "";
         }
     }
 }
