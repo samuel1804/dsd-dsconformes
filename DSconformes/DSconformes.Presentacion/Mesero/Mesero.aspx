@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" CodeBehind="Mesero.aspx.cs" Inherits="DSconformes.Presentacion.Mesero.Mesero" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" Inherits="DSconformes.Presentacion.Mesero.Mesero" CodeBehind="Mesero.aspx.cs"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
@@ -35,7 +35,7 @@
 			              </div>
 			              <div class="col-sm-10">
 			                  <asp:TextBox ID="id_mesero" runat="server" class="form-control input-sm"
-                              required placeholder="Ingrese el Código"  ></asp:TextBox>
+                              ReadOnly="True"  ></asp:TextBox>
 			              </div>
 			            </div>
 			            <br /><br />
@@ -44,7 +44,7 @@
 			                <label class="form-label">DNI</label>
 			              </div>
 			              <div class="col-sm-10">
-			                  <asp:TextBox ID="TextBox1" runat="server" class="form-control input-sm"
+			                  <asp:TextBox ID="TextDNI" runat="server" class="form-control input-sm"
                               required placeholder="Ingrese el DNI"  ></asp:TextBox>
 			              </div>
 			            </div>
@@ -55,7 +55,7 @@
 			              </div>
 			              <div>
 			                <div class="col-sm-10">
-			                    <asp:TextBox ID="TextBox2" runat="server" class="form-control input-sm"
+			                    <asp:TextBox ID="TextNombres" runat="server" class="form-control input-sm"
                                 required placeholder="Ingrese Nombres"  ></asp:TextBox>
 			                </div>
 			              </div>
@@ -65,10 +65,14 @@
 			              <div class="col-sm-2">
 			                <label class="form-label">Mesa</label>
 			              </div>
-			              <div class="col-sm-10">
-			                  <asp:TextBox ID="TextBox3" runat="server" class="form-control input-sm"
-                              required placeholder="Ingrese el Código de la Mesa"  ></asp:TextBox>
-			              </div>
+			              <div>
+                          <div class="col-sm-10">
+			                  <asp:DropDownList ID="ddlMesa" runat="server" class="form-control"
+                                    TextMode="MultiLine">
+                                   
+                                    </asp:DropDownList>
+			                </div>
+			             </div>
 			            </div>
 			            <br /><br />
                         <div class="form-group">
@@ -77,7 +81,7 @@
 			              </div>
 			              <div>
 			                <div class="col-sm-10">
-			                    <asp:DropDownList ID="TxtTemas" runat="server" class="form-control" 
+			                    <asp:DropDownList ID="TxtSexo" runat="server" class="form-control" 
                                     TextMode="MultiLine">
                                     <asp:ListItem Text="Hombre" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="Mujer" Value="1"></asp:ListItem>
@@ -116,8 +120,11 @@
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" class="btn btn-primary" 
-                                        />			              			             
+					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar"
+                                        class="btn btn-primary" onclick="BtnGrabar_Click"
+                                        />
+                                        <asp:Button ID="btnLimpiar" runat="server" class="btn btn-primary" 
+                                        Text="Limpiar" onclick="btnLimpiar_Click" />			              			             
 					            </div>
 					          </div>	
 				          </c:if>	

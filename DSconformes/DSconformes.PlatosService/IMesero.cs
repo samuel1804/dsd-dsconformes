@@ -13,12 +13,12 @@ namespace DSconformes.PlatosService
     public interface IMesero
     {
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate="Meseros", ResponseFormat=WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         Meseros CrearMesero(Meseros meseroACrear);
         
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Meseros/{id_mesero}", ResponseFormat = WebMessageFormat.Json)]
-        Meseros ObtenerMesero(int id_mesero);
+        Meseros ObtenerMesero(string id_mesero);
         
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
