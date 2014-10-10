@@ -17,20 +17,20 @@ namespace DSconformes.PlatosService
         Meseros CrearMesero(Meseros meseroACrear);
         
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "Meseros/{id_mesero}", ResponseFormat = WebMessageFormat.Json)]
-        Meseros ObtenerMesero(string id_mesero);
-        
-        [OperationContract]
-        [WebInvoke(Method = "PUT", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
-        Meseros ModificarMesero(Meseros meseroAModificar);
-        
-        [OperationContract]
-        [WebInvoke(Method = "DELETE", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
-        bool EliminarMesero(Meseros meseroAModificar);
-        
-        [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
-        List<Meseros> ListarMeseros();
+        Meseros ObtenerUltimo();
+        
+        //[OperationContract]
+        //[WebInvoke(Method = "PUT", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
+        //Meseros ModificarMesero(Meseros meseroAModificar);
+        
+        //[OperationContract]
+        //[WebInvoke(Method = "DELETE", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
+        //bool EliminarMesero(Meseros meseroAModificar);
+        
+        //[OperationContract]
+        //[WebInvoke(Method = "GET", UriTemplate = "Meseros", ResponseFormat = WebMessageFormat.Json)]
+        //List<Meseros> ListarMeseros();
 
 
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DSconformes.Test
+namespace DSconformes.Presentacion
 {
     public class Platos
     {

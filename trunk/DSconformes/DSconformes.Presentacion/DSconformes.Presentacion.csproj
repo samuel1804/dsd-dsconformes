@@ -69,10 +69,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\Styles\Site.css" />
     <Content Include="frmLogin.aspx" />
-    <Content Include="Mesas\DetalleMesa.aspx" />
-    <Content Include="Mesas\Mesas.aspx" />
+    <Content Include="Mesa\DetalleMesa.aspx" />
+    <Content Include="Mesa\frmMesas.aspx" />
     <Content Include="Welcome.aspx" />
-    <Content Include="Zonas\Zonas.aspx" />
+    <Content Include="Zona\frmZonas.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Mesero\Mesero.aspx" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -213,20 +213,22 @@
     <Compile Include="frmLogin.aspx.designer.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Mesas\DetalleMesa.aspx.cs">
+    <Compile Include="Mesas.cs" />
+    <Compile Include="Mesa\DetalleMesa.aspx.cs">
       <DependentUpon>DetalleMesa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Mesas\DetalleMesa.aspx.designer.cs">
+    <Compile Include="Mesa\DetalleMesa.aspx.designer.cs">
       <DependentUpon>DetalleMesa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Mesas\Mesas.aspx.cs">
-      <DependentUpon>Mesas.aspx</DependentUpon>
+    <Compile Include="Mesa\frmMesas.aspx.cs">
+      <DependentUpon>frmMesas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Mesas\Mesas.aspx.designer.cs">
-      <DependentUpon>Mesas.aspx</DependentUpon>
+    <Compile Include="Mesa\frmMesas.aspx.designer.cs">
+      <DependentUpon>frmMesas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Meseros.cs" />
     <Compile Include="Platos.cs" />
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
@@ -235,12 +237,13 @@
     <Compile Include="Welcome.aspx.designer.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Zonas\Zonas.aspx.cs">
-      <DependentUpon>Zonas.aspx</DependentUpon>
+    <Compile Include="Zonas.cs" />
+    <Compile Include="Zona\frmZonas.aspx.cs">
+      <DependentUpon>frmZonas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Zonas\Zonas.aspx.designer.cs">
-      <DependentUpon>Zonas.aspx</DependentUpon>
+    <Compile Include="Zona\frmZonas.aspx.designer.cs">
+      <DependentUpon>frmZonas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

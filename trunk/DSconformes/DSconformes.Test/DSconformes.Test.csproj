@@ -9,7 +9,7 @@
     <ProjectGuid>{C58993DC-B91A-4CB0-8FAC-1A1DF0B50A82}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DSconformes.Test</RootNamespace>
+    <RootNamespace>DSconformes.Presentacion</RootNamespace>
     <AssemblyName>DSconformes.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="Categorias.cs" />
     <Compile Include="CategoriaTest.cs" />
+    <Compile Include="Mesas.cs" />
+    <Compile Include="Meseros.cs" />
+    <Compile Include="MeserosTest.cs" />
     <Compile Include="Platos.cs" />
     <Compile Include="PlatosTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,13 +63,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Zonas.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\ws_reserva\DSconformes.Test.ws_reserva.Reservas.datasource">
+    <None Include="Service References\ws_reserva\DSconformes.Presentacion.ws_reserva.Reservas.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ws_reserva\Reserva.wsdl" />

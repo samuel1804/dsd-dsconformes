@@ -61,12 +61,17 @@
   <ItemGroup>
     <Content Include="Categoria.svc" />
     <EmbeddedResource Include="Dominio\Mesas.hbm.xml" />
-    <EmbeddedResource Include="Dominio\Meseros.hbm.xml" />
     <EmbeddedResource Include="Dominio\Reservas.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dominio\Reserva_Detalles.hbm.xml" />
     <EmbeddedResource Include="Dominio\Zonas.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dominio\Platos.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dominio\Categorias.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="Mesa.svc" />

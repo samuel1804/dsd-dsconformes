@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DSconformes.PlatosService.Dominio;
 using System.Runtime.Serialization;
 namespace DSconformes.PlatosService.Dominio
 {
@@ -22,9 +21,9 @@ namespace DSconformes.PlatosService.Dominio
     [DataMember]
     public int edad { get; set; }
     [DataMember]
-    public TimeSpan h_entrada { get; set; }
+    public TimeSpan? h_entrada { get; set; }
     [DataMember]
-    public TimeSpan h_salida { get; set; }
+    public TimeSpan? h_salida { get; set; }
     }
 
 }

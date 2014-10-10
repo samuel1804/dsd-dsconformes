@@ -63,14 +63,37 @@
                         <br /><br />
                         <div class="form-group">
 			              <div class="col-sm-2">
+			                <label class="form-label">Zona</label>
+			              </div>
+			              <div>
+                          <div class="col-sm-10">
+			                  <asp:UpdatePanel ID="upZona" runat="server">
+                              <ContentTemplate>
+                              <asp:DropDownList ID="ddlZona" runat="server" class="form-control"
+                                    TextMode="MultiLine" AutoPostBack="True" 
+                                  onselectedindexchanged="ddlZona_SelectedIndexChanged">
+                                   
+                                    </asp:DropDownList>
+                              </ContentTemplate>
+                              </asp:UpdatePanel>
+			                </div>
+			             </div>
+			            </div>
+                        <br /><br />
+                        <div class="form-group">
+			              <div class="col-sm-2">
 			                <label class="form-label">Mesa</label>
 			              </div>
 			              <div>
                           <div class="col-sm-10">
-			                  <asp:DropDownList ID="ddlMesa" runat="server" class="form-control"
+			                  <asp:UpdatePanel ID="upMesa" runat="server">
+                              <ContentTemplate>
+                              <asp:DropDownList ID="ddlMesa" runat="server" class="form-control"
                                     TextMode="MultiLine">
                                    
                                     </asp:DropDownList>
+                              </ContentTemplate>
+                              </asp:UpdatePanel>
 			                </div>
 			             </div>
 			            </div>
