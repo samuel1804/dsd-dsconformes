@@ -18,9 +18,9 @@ namespace DSconformes.PlatosService
             return dao.Crear(meseroACrear);
         }
 
-        public Meseros ObtenerMesero(string id_mesero)
+        public Meseros ObtenerUltimo()
         {
-            return dao.Obtener(id_mesero);
+            return dao.ObtenerUltimo();
         }
 
         public Meseros ModificarMesero(Meseros meseroAModificar)
