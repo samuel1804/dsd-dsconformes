@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
-namespace DSconformes.Test
+namespace DSconformes.Presentacion
 {
      [TestClass]
     public class CategoriaTest

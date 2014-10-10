@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DSconformes.Test.ws_reserva {
+namespace DSconformes.Presentacion.ws_reserva {
     using System.Runtime.Serialization;
     using System;
     
@@ -109,7 +109,7 @@ namespace DSconformes.Test.ws_reserva {
         private int id_mesaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DSconformes.Test.ws_reserva.Zonas zonaField;
+        private DSconformes.Presentacion.ws_reserva.Zonas zonaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -161,7 +161,7 @@ namespace DSconformes.Test.ws_reserva {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DSconformes.Test.ws_reserva.Zonas zona {
+        public DSconformes.Presentacion.ws_reserva.Zonas zona {
             get {
                 return this.zonaField;
             }
@@ -211,7 +211,7 @@ namespace DSconformes.Test.ws_reserva {
         private int id_reservaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DSconformes.Test.ws_reserva.Mesas mesaField;
+        private DSconformes.Presentacion.ws_reserva.Mesas mesaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nombreField;
@@ -220,7 +220,7 @@ namespace DSconformes.Test.ws_reserva {
         private decimal total_consumoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DSconformes.Test.ws_reserva.Zonas zonaField;
+        private DSconformes.Presentacion.ws_reserva.Zonas zonaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -311,7 +311,7 @@ namespace DSconformes.Test.ws_reserva {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DSconformes.Test.ws_reserva.Mesas mesa {
+        public DSconformes.Presentacion.ws_reserva.Mesas mesa {
             get {
                 return this.mesaField;
             }
@@ -350,7 +350,7 @@ namespace DSconformes.Test.ws_reserva {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DSconformes.Test.ws_reserva.Zonas zona {
+        public DSconformes.Presentacion.ws_reserva.Zonas zona {
             get {
                 return this.zonaField;
             }
@@ -377,22 +377,22 @@ namespace DSconformes.Test.ws_reserva {
     public interface IReserva {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Registrar", ReplyAction="http://tempuri.org/IReserva/RegistrarResponse")]
-        DSconformes.Test.ws_reserva.Reservas Registrar(string nombre, string dni, DSconformes.Test.ws_reserva.Zonas zona, DSconformes.Test.ws_reserva.Mesas mesa, System.TimeSpan hora_inicio, int estado, int asistentes, System.DateTime fecha);
+        DSconformes.Presentacion.ws_reserva.Reservas Registrar(string nombre, string dni, DSconformes.Presentacion.ws_reserva.Zonas zona, DSconformes.Presentacion.ws_reserva.Mesas mesa, System.TimeSpan hora_inicio, int estado, int asistentes, System.DateTime fecha);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Listar", ReplyAction="http://tempuri.org/IReserva/ListarResponse")]
-        DSconformes.Test.ws_reserva.Reservas[] Listar();
+        DSconformes.Presentacion.ws_reserva.Reservas[] Listar();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Obtener", ReplyAction="http://tempuri.org/IReserva/ObtenerResponse")]
-        DSconformes.Test.ws_reserva.Reservas Obtener(int id_reserva);
+        DSconformes.Presentacion.ws_reserva.Reservas Obtener(int id_reserva);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IReservaChannel : DSconformes.Test.ws_reserva.IReserva, System.ServiceModel.IClientChannel {
+    public interface IReservaChannel : DSconformes.Presentacion.ws_reserva.IReserva, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ReservaClient : System.ServiceModel.ClientBase<DSconformes.Test.ws_reserva.IReserva>, DSconformes.Test.ws_reserva.IReserva {
+    public partial class ReservaClient : System.ServiceModel.ClientBase<DSconformes.Presentacion.ws_reserva.IReserva>, DSconformes.Presentacion.ws_reserva.IReserva {
         
         public ReservaClient() {
         }
@@ -413,15 +413,15 @@ namespace DSconformes.Test.ws_reserva {
                 base(binding, remoteAddress) {
         }
         
-        public DSconformes.Test.ws_reserva.Reservas Registrar(string nombre, string dni, DSconformes.Test.ws_reserva.Zonas zona, DSconformes.Test.ws_reserva.Mesas mesa, System.TimeSpan hora_inicio, int estado, int asistentes, System.DateTime fecha) {
+        public DSconformes.Presentacion.ws_reserva.Reservas Registrar(string nombre, string dni, DSconformes.Presentacion.ws_reserva.Zonas zona, DSconformes.Presentacion.ws_reserva.Mesas mesa, System.TimeSpan hora_inicio, int estado, int asistentes, System.DateTime fecha) {
             return base.Channel.Registrar(nombre, dni, zona, mesa, hora_inicio, estado, asistentes, fecha);
         }
         
-        public DSconformes.Test.ws_reserva.Reservas[] Listar() {
+        public DSconformes.Presentacion.ws_reserva.Reservas[] Listar() {
             return base.Channel.Listar();
         }
         
-        public DSconformes.Test.ws_reserva.Reservas Obtener(int id_reserva) {
+        public DSconformes.Presentacion.ws_reserva.Reservas Obtener(int id_reserva) {
             return base.Channel.Obtener(id_reserva);
         }
     }

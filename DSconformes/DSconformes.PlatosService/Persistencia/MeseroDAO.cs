@@ -32,35 +32,29 @@ namespace DSconformes.Persistencia
 
                 }
             }
-            meseroCreado = Obtener(meseroACrear.id_mesero);
+            meseroCreado = ObtenerUltimo();
             return meseroCreado;
 
         }
 
-        public Meseros Obtener(int id_mesero)
+        public Meseros ObtenerUltimo()
         {
             Meseros meseroEncontrado = null;
-            string sql = "SELECT * FROM t_mesero WHERE id_mesero=@id";
+            string sql = "SELECT isnull(max(id_mesero),0)+1 [id_mesero] FROM t_mesero";
             using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(sql, con))
                 {
-                    com.Parameters.Add(new SqlParameter("@id", id_mesero));
+                   
                     using (SqlDataReader resultado = com.ExecuteReader())
                     {
                         if (resultado.Read())
                         {
                             meseroEncontrado = new Meseros()
                             {
-                                id_mesero = (int)resultado["id_msero"],
-                                dni = (int)resultado["dni"],
-                                nombre = (string)resultado["nombre"],
-                                mesa = (Mesas)resultado["mesa"],
-                                sexo = (char)resultado["sexo"],
-                                edad = (int)resultado["edad"],
-                                h_entrada = (TimeSpan)resultado["h_entrada"],
-                                h_salida = (TimeSpan)resultado["h_salida"]
+                                id_mesero = (int)resultado["id_mesero"],
+                               
                             };
                         }
                     }
@@ -123,7 +117,7 @@ namespace DSconformes.Persistencia
                             mesero = new Meseros()
                             {
                                 id_mesero = (int)dr["id_mesero"],
-                                dni = (int)dr["dni"],
+                                dni = (string)dr["dni"],
                                 nombre = (string)dr["nombre"],
                                 mesa = (Mesas)dr["mesa"],
                                 sexo = (char)dr["sexo"],

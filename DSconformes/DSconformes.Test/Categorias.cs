@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace DSconformes.Test
+namespace DSconformes.Presentacion
 {
     
     public class Categorias

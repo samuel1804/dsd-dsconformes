@@ -18,8 +18,9 @@ namespace DSconformes.PlatosService
         [WebInvoke(Method = "POST", UriTemplate = "Platos", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         Platos Insertar(Platos pbePlato);
 
-        [WebInvoke(Method = "GET", UriTemplate = "Platos", ResponseFormat = WebMessageFormat.Json)]
+        
         [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "Platos", ResponseFormat = WebMessageFormat.Json)]
         Platos ObtenerUltimo();
     }
 }

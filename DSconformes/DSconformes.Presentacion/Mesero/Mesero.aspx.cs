@@ -10,39 +10,79 @@ using System.Web.Script.Serialization;
 using System.Text;
 
 
+
+
+
 namespace DSconformes.Presentacion.Mesero
 {
     public partial class Mesero : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarCodigo();
-            CargarMesas();
+            if (!IsPostBack) {
+                CargarCodigo();
+                CargarZonas();
+                CargarMesas();
+            }
+
+        }
+
+        private void CargarZonas()
+        {
+            ws_zona.ZonaClient zona = new ws_zona.ZonaClient();
+            ddlZona.DataSource = zona.ListarZonas();
+            ddlZona.DataTextField = "nombre";
+            ddlZona.DataValueField = "id_zona";
+            ddlZona.DataBind();
+        }
+        private void CargarMesas()
+        {
+            ws_mesa.MesaClient mc = new ws_mesa.MesaClient();
+            ddlMesa.DataSource = mc.ListarMesasporZona(int.Parse(ddlZona.SelectedValue.ToString()));
+            ddlMesa.DataTextField = "id_mesa";
+            ddlMesa.DataValueField = "id_mesa";
+            ddlMesa.DataBind();
 
         }
 
         private void CargarCodigo()
         {
-            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Mesas.svc/Mesas") as HttpWebRequest;
+            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Mesero.svc/Meseros") as HttpWebRequest;
             req2.Method = "GET";
             HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
             StreamReader reader2 = new StreamReader(res2.GetResponseStream());
             string meserojson = reader2.ReadToEnd();
             JavaScriptSerializer js = new JavaScriptSerializer();
-            List<Mesas> meseroobtenido = js.Deserialize<List<Mesas>>(meserojson);
-            ddlCategoria.DataSource = meseroobtenido;
-            ddlCategoria.DataTextField = "nombre";
-            ddlCategoria.DataValueField = "id_mesa";
-            ddlCategoria.DataBind();
+            Meseros meseroobtenido = js.Deserialize<Meseros>(meserojson);
+            id_mesero.Text = meseroobtenido.id_mesero.ToString();
         }
         private void Limpiar()
         {
-            txtCodigo.Text = "";
-            txtnombre.Text = "";
-            txtDescripcion.Text = "";
-            ddlCategoria.SelectedIndex = 0;
-            txtPrecio.Text = "";
+            id_mesero.Text = "";
 
+
+        }
+
+        protected void BtnGrabar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+
+            catch (Exception ex) { 
+            
+            }
+        }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlZona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarMesas();
         }
     }
 }
