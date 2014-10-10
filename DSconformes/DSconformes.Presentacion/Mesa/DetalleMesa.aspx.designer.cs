@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DSconformes.Presentacion.Mesas {
+namespace DSconformes.Presentacion.Mesa {
     
     
     public partial class DetalleMesa {

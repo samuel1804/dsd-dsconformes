@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DSconformes.Presentacion.Mesas
+namespace DSconformes.Presentacion.Mesa
 {
     public partial class DetalleMesa : System.Web.UI.Page
     {
