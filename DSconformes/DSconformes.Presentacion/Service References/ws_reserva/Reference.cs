@@ -448,6 +448,9 @@ namespace DSconformes.Presentacion.ws_reserva {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Obtener", ReplyAction="http://tempuri.org/IReserva/ObtenerResponse")]
         DSconformes.Presentacion.ws_reserva.Reservas Obtener(int id_reserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Actualizar", ReplyAction="http://tempuri.org/IReserva/ActualizarResponse")]
+        void Actualizar(int id_reserva, decimal Total);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -487,6 +490,10 @@ namespace DSconformes.Presentacion.ws_reserva {
         
         public DSconformes.Presentacion.ws_reserva.Reservas Obtener(int id_reserva) {
             return base.Channel.Obtener(id_reserva);
+        }
+        
+        public void Actualizar(int id_reserva, decimal Total) {
+            base.Channel.Actualizar(id_reserva, Total);
         }
     }
 }

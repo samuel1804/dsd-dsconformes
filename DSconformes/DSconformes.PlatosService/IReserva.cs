@@ -18,5 +18,7 @@ namespace DSconformes.PlatosService
         List<Reservas> Listar(string nombre,string dni);
         [OperationContract]
         Reservas Obtener(int id_reserva);
+        [OperationContract]
+        void Actualizar(int id_reserva,decimal Total);
     }
 }

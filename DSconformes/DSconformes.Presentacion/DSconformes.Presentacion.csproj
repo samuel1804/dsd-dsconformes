@@ -73,7 +73,9 @@
     <Content Include="Content\Styles\Site.css" />
     <Content Include="frmLogin.aspx" />
     <Content Include="image\edit.png" />
+    <Content Include="image\visa.png" />
     <Content Include="Mesa\DetalleMesa.aspx" />
+    <Content Include="Reservas\EmitirComanda.aspx" />
     <Content Include="Reservas\CrearPedido.aspx" />
     <None Include="Service References\ws_reserva_detalle\DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -246,6 +248,13 @@
     </Compile>
     <Compile Include="Meseros.cs" />
     <Compile Include="Platos.cs" />
+    <Compile Include="Reservas\EmitirComanda.aspx.cs">
+      <DependentUpon>EmitirComanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservas\EmitirComanda.aspx.designer.cs">
+      <DependentUpon>EmitirComanda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reservas\CrearPedido.aspx.cs">
       <DependentUpon>CrearPedido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +262,7 @@
     <Compile Include="Reservas\CrearPedido.aspx.designer.cs">
       <DependentUpon>CrearPedido.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reserva_Detalles.cs" />
     <Compile Include="Service References\ws_reserva_detalle\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

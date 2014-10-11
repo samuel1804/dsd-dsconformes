@@ -52,4 +52,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_reserva" type="xs:int" />
+        <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

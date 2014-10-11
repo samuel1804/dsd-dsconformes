@@ -42,16 +42,13 @@ namespace DSconformes.Persistencia
                 if (!MessageQueue.Exists(rutacola))
                     MessageQueue.Create(rutacola);
                 cola = new MessageQueue(rutacola);
-                int cantmsg = cola.GetAllMessages().Count();
 
-                
-
-                for (int i = 0; i <= cantmsg; i++)
-                {
+        
+                foreach(Message message in cola.GetAllMessages()){
                     cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(Reserva_Detalles) });
                     mensaje = cola.Receive();
                     Reserva_Detalles reserva_detalle = (Reserva_Detalles)mensaje.Body;
-
+                    Lista.Add(reserva_detalle);
                 }
 
                 return Lista;
