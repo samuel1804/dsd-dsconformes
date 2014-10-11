@@ -18,8 +18,6 @@ namespace DSconformes.PlatosService
         {
             return dao.Insertar(pbePlato);
         }
-
-
         public Platos ObtenerUltimo()
         {
             return dao.ObtenerUltimo();
