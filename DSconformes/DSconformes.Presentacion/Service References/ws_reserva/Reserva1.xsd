@@ -4,7 +4,10 @@
   <xs:complexType name="Zonas">
     <xs:sequence>
       <xs:element minOccurs="0" name="capacidad" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="habilitado" type="xs:boolean" />
       <xs:element minOccurs="0" name="id_zona" type="xs:int" />
+      <xs:element minOccurs="0" name="minimo" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -25,6 +28,7 @@
       <xs:element minOccurs="0" name="estado" type="xs:int" />
       <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
       <xs:element minOccurs="0" name="hora_inicio" type="ser:duration" />
+      <xs:element minOccurs="0" name="id_mesa" type="xs:int" />
       <xs:element minOccurs="0" name="id_reserva" type="xs:int" />
       <xs:element minOccurs="0" name="mesa" nillable="true" type="tns:Mesas" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
@@ -33,4 +37,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Reservas" nillable="true" type="tns:Reservas" />
+  <xs:complexType name="ArrayOfReservas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reservas" nillable="true" type="tns:Reservas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservas" nillable="true" type="tns:ArrayOfReservas" />
 </xs:schema>

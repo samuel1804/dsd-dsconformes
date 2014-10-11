@@ -23,4 +23,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Listar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DSconformes.PlatosService.Dominio" minOccurs="0" name="ListarResult" nillable="true" type="q5:ArrayOfReservas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_reserva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DSconformes.PlatosService.Dominio" minOccurs="0" name="ObtenerResult" nillable="true" type="q6:Reservas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
