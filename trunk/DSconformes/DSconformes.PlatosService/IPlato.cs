@@ -27,5 +27,10 @@ namespace DSconformes.PlatosService
         [WebInvoke(Method = "GET", UriTemplate = "Platos/{cod_categoria}", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
         List<Platos> Listar(string cod_categoria);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "Plato/{cod_plato}", ResponseFormat = WebMessageFormat.Json)]
+        Platos Obtener(string cod_plato);
     }
 }

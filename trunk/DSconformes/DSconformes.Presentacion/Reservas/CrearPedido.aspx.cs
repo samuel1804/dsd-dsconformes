@@ -23,6 +23,7 @@ namespace DSconformes.Presentacion.Reservas
                 CargarPedidos();
                 CargarCategorias();
                 CargarPlatos();
+                CargarDatos();
             }
 
         }
@@ -88,10 +89,15 @@ namespace DSconformes.Presentacion.Reservas
         protected void ddlCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarPlatos();
+            CargarDatos();
             mpePedido.Show();
         }
         private void CargarDetalle() { 
-        
+        ws_reserva_detalle.Reserva_DetalleClient wdc=new ws_reserva_detalle.Reserva_DetalleClient();
+      gvPedidoDetalle.DataSource=  wdc.ListarReserva(int.Parse(hfIdReserva.Value));
+      gvPedidoDetalle.DataBind();
+
+
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -104,9 +110,10 @@ namespace DSconformes.Presentacion.Reservas
                 rd.cantidad = int.Parse(txtCantidad.Text);
                 rd.costo = decimal.Parse(txtCosto.Text);
                 rd.subtotal = rd.costo * rd.cantidad;
-                rdc.Registrar(rd);
+                rdc.Insertar(rd);
 
                 CargarDetalle();
+                mpePedido.Show();
             }
             catch (Exception ex) { 
 
@@ -117,12 +124,28 @@ namespace DSconformes.Presentacion.Reservas
 
         protected void gvPedidos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            int idr= (int)this.gvPedidos.DataKeys[e.RowIndex]["id_reserva"];
+
+            hfIdReserva.Value = idr.ToString();
+            CargarDetalle();
             mpePedido.Show();
         }
+        private void CargarDatos() {
+            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Plato.svc/Plato/" + ddlPlato.SelectedValue) as HttpWebRequest;
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string platojson = reader2.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Platos platoobtenido = js.Deserialize<Platos>(platojson);
 
+
+            txtCosto.Text = platoobtenido.costo.ToString();
+            txtCantidad.Text = "1";
+        }
         protected void ddlPlato_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            CargarDatos();
             mpePedido.Show();
         }
 

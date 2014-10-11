@@ -51,6 +51,20 @@ namespace DSconformes.Presentacion
 
         }
 
+        [TestMethod]
+        public void Obtener()
+        {
+            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Plato.svc/Plato/2") as HttpWebRequest;
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string platojson = reader2.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Platos platoobtenido = js.Deserialize<Platos>(platojson);
+            Assert.AreEqual(2, platoobtenido.id_plato);
+
+        }
+
 
         [TestMethod]
         public void Listar()

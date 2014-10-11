@@ -75,6 +75,9 @@
     <Content Include="image\edit.png" />
     <Content Include="Mesa\DetalleMesa.aspx" />
     <Content Include="Reservas\CrearPedido.aspx" />
+    <None Include="Service References\ws_reserva_detalle\DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ws_reserva_detalle\Reserva_Detalle.disco" />
     <None Include="Service References\ws_reserva_detalle\configuration91.svcinfo" />
     <None Include="Service References\ws_reserva_detalle\configuration.svcinfo" />

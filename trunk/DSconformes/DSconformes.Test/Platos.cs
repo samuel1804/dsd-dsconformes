@@ -19,5 +19,7 @@ namespace DSconformes.Presentacion
 
         public string descripcion { get; set; }
 
+        public string cod_plato { get; set; }
+
     }
 }

@@ -63,6 +63,38 @@ namespace DSconformes.Persistencia
 
             return plato;
         }
+        public Platos Obtener(string cod_plato)
+        {
+
+            string sql = "Select * from t_plato where id_plato=@cod_plato";
+            Platos plato = new Platos();
+
+            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
+            {
+
+                con.Open();
+                using (SqlCommand com = new SqlCommand(sql, con))
+                {
+                    com.Parameters.Add(new SqlParameter("@cod_plato", cod_plato));
+                    using (SqlDataReader dr = com.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            plato = new Platos()
+                            {
+                                id_plato = (int)dr["id_plato"],
+                                costo = (decimal)dr["costo"],
+                            };
+
+                        }
+
+
+                    }
+                }
+            }
+
+            return plato;
+        }
 
         public List<Platos> Listar(string cod_categoria)
         {
