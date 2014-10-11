@@ -16,5 +16,15 @@ namespace DSconformes.PlatosService
         {
             return dao.Listar();
         }
+        public Dominio.Categorias Insertar(Dominio.Categorias pbeCat)
+        {
+            return dao.Insertar(pbeCat);
+        }
+
+        public Categorias ObtenerUltimo()
+        {
+            return dao.ObtenerUltimo();
+        }
+
     }
 }
