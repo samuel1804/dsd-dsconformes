@@ -21,5 +21,10 @@ namespace DSconformes.PlatosService.Dominio
         public decimal costo { get; set; }
         [DataMember]
         public decimal subtotal { get; set; }
+
+        [DataMember]
+        public int id_reserva { get; set; }
+        [DataMember]
+        public int id_plato { get; set; }
     }
 }
