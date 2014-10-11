@@ -24,5 +24,14 @@ namespace DSconformes.PlatosService
         {
             return dao.ObtenerUltimo();
         }
+
+
+
+
+
+        public List<Platos> Listar(string cod_categoria)
+        {
+            return dao.Listar(cod_categoria);
+        }
     }
 }

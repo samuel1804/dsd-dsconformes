@@ -50,5 +50,21 @@ namespace DSconformes.Presentacion
             Assert.AreEqual(22, platoobtenido.id_plato);
 
         }
+
+
+        [TestMethod]
+        public void Listar()
+        {
+            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Plato.svc/Platos/3") as HttpWebRequest;
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string platojson = reader2.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            List<Platos> platoobtenido = js.Deserialize<List<Platos>>(platojson);
+            Assert.AreEqual(1, platoobtenido.Count());
+
+        }
+
     }
 }
