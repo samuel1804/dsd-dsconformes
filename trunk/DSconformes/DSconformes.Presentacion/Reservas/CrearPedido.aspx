@@ -117,6 +117,8 @@ Reservas
                                         &nbsp;</td>
                                     <td>
                                         &nbsp;</td>
+                                    <td  style="width:30%">
+                                        &nbsp;</td>
                                     <td  style="width:2%">
                                         &nbsp;</td>
                                 </tr>
@@ -127,6 +129,14 @@ Reservas
                                         Categorias</td>
                                     <td>
                                         :</td>
+                                    <td>
+                                    <asp:UpdatePanel ID="upCategoria" runat="server">
+                                    <ContentTemplate>
+                                    <asp:DropDownList ID="ddlCategoria" runat="server" Width="80%" AutoPostBack="True" 
+                                            onselectedindexchanged="ddlCategoria_SelectedIndexChanged"></asp:DropDownList>
+                                    </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                        </td>
                                     <td>
                                         &nbsp;</td>
                                     <td>
@@ -140,6 +150,56 @@ Reservas
                                     <td>
                                         :</td>
                                     <td>
+                                        <asp:UpdatePanel ID="upPlato" runat="server">
+                                            <ContentTemplate>
+                                                <asp:DropDownList ID="ddlPlato" runat="server" AutoPostBack="True" 
+                                                    Width="80%">
+                                                </asp:DropDownList>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </td>
+                                    <td>
+                                       <asp:UpdatePanel id="upAgregar" runat="server">
+                                       <ContentTemplate>
+                                        <asp:Button ID="btnAgregar" runat="server" class="btn btn-primary" 
+                                            onclick="btnAgregar_Click" Text="Agregar" />
+                                       </ContentTemplate>
+                                       </asp:UpdatePanel>
+                                        </td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        <asp:GridView ID="gvPedidoDetalle" runat="server" AutoGenerateColumns="False">
+                                            <Columns>
+                                                <asp:BoundField DataField="nombre" HeaderText="Plato" />
+                                                <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
+                                                <asp:BoundField DataField="costo" HeaderText="Costo" />
+                                                <asp:BoundField DataField="subtotal" HeaderText="SubTotal" />
+                                            </Columns>
+                                        </asp:GridView></td>
+                                    <td>
                                         &nbsp;</td>
                                     <td>
                                         &nbsp;</td>
@@ -155,32 +215,12 @@ Reservas
                                         &nbsp;</td>
                                     <td>
                                         &nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        <asp:GridView ID="gvPedidoDetalle" runat="server"></asp:GridView></td>
                                     <td>
                                         &nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td>
                                         &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                </tr>
-                                <tr>
                                     <td>
                                         &nbsp;</td>
                                     <td>
