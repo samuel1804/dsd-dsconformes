@@ -16,7 +16,6 @@ namespace DSconformes.Presentacion.Categoria
 		protected void Page_Load(object sender, EventArgs e)
 		{
             CargarCodigo();
-
 		}
         private void Limpiar()
         {
@@ -25,14 +24,14 @@ namespace DSconformes.Presentacion.Categoria
         }
         private void CargarCodigo()
         {
-            HttpWebRequest req2 = WebRequest.Create("http://localhost:12455/Categoria.svc/CategoriasUltimo") as HttpWebRequest;
+            HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:12455/Categoria.svc/CategoriasUltimo");
             req2.Method = "GET";
             HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
             StreamReader reader2 = new StreamReader(res2.GetResponseStream());
             string catjson = reader2.ReadToEnd();
             JavaScriptSerializer js = new JavaScriptSerializer();
             Categorias catobtenido = js.Deserialize<Categorias>(catjson);
-            txtCodigo.Text = (catobtenido.id_categoria + 1).ToString() ?? "0";
+            txtCodigo.Text = (catobtenido.id_categoria+1).ToString() ?? "0";
         }
         protected void BtnGrabar_Click(object sender, EventArgs e)
         {
