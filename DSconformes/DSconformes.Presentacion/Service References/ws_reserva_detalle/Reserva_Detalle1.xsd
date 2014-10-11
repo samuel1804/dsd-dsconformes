@@ -3,6 +3,7 @@
   <xs:import schemaLocation="http://localhost:12455/Reserva_Detalle.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Reserva_Detalles">
     <xs:sequence>
+      <xs:element minOccurs="0" name="PlatoNombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cantidad" type="xs:int" />
       <xs:element minOccurs="0" name="costo" type="xs:decimal" />
       <xs:element minOccurs="0" name="id_plato" type="xs:int" />
@@ -18,6 +19,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="categoria" nillable="true" type="tns:Categorias" />
       <xs:element minOccurs="0" name="cod_categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_plato" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="costo" type="xs:decimal" />
       <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id_categoria" type="xs:int" />
@@ -69,4 +71,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Zonas" nillable="true" type="tns:Zonas" />
+  <xs:complexType name="ArrayOfReserva_Detalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reserva_Detalles" nillable="true" type="tns:Reserva_Detalles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReserva_Detalles" nillable="true" type="tns:ArrayOfReserva_Detalles" />
 </xs:schema>

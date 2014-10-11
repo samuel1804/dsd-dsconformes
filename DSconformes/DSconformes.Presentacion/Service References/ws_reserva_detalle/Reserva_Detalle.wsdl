@@ -13,16 +13,73 @@
   <wsdl:message name="IReserva_Detalle_Registrar_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarResponse" />
   </wsdl:message>
+  <wsdl:message name="IReserva_Detalle_Listar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Listar" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Detalle_Listar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Detalle_Insertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Detalle_Insertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Detalle_ListarReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReserva" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Detalle_ListarReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReservaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IReserva_Detalle">
     <wsdl:operation name="Registrar">
       <wsdl:input wsaw:Action="http://tempuri.org/IReserva_Detalle/Registrar" message="tns:IReserva_Detalle_Registrar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReserva_Detalle/RegistrarResponse" message="tns:IReserva_Detalle_Registrar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Listar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReserva_Detalle/Listar" message="tns:IReserva_Detalle_Listar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReserva_Detalle/ListarResponse" message="tns:IReserva_Detalle_Listar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReserva_Detalle/Insertar" message="tns:IReserva_Detalle_Insertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReserva_Detalle/InsertarResponse" message="tns:IReserva_Detalle_Insertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReserva_Detalle/ListarReserva" message="tns:IReserva_Detalle_ListarReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReserva_Detalle/ListarReservaResponse" message="tns:IReserva_Detalle_ListarReserva_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IReserva_Detalle" type="tns:IReserva_Detalle">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Registrar">
       <soap:operation soapAction="http://tempuri.org/IReserva_Detalle/Registrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listar">
+      <soap:operation soapAction="http://tempuri.org/IReserva_Detalle/Listar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar">
+      <soap:operation soapAction="http://tempuri.org/IReserva_Detalle/Insertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarReserva">
+      <soap:operation soapAction="http://tempuri.org/IReserva_Detalle/ListarReserva" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
