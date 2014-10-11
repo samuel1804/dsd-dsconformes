@@ -75,7 +75,7 @@ namespace DSconformes.Presentacion.Reservas
         {
             try
             {
-
+                
                 CargarPedidos();
             }
             catch(Exception ex){
