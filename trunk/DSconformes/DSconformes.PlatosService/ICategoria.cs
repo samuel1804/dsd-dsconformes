@@ -14,8 +14,22 @@ namespace DSconformes.PlatosService
     [ServiceContract]
     public interface ICategoria
     {
+        /*[OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Categorias", ResponseFormat = WebMessageFormat.Json)]
+        Categorias ObtenerUltimo();*/
         [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "Categorias", ResponseFormat = WebMessageFormat.Json)]
         List<Categorias> Listar();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "CategoriasUltimo", ResponseFormat = WebMessageFormat.Json)]
+        Categorias ObtenerUltimo();
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "Categorias", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        Categorias Insertar(Categorias pbeCat);
+
+        
+
     }
 }
