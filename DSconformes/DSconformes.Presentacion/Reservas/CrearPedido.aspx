@@ -72,10 +72,10 @@ Reservas
 			            <div>
 			              
 			                <div>
-                            <asp:UpdatePanel ID="upPedidos" runat="server">
+                            <asp:UpdatePanel ID="upPedidos" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                             <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="False" 
-                                    Width="100%">
+                                    Width="100%" onrowupdating="gvPedidos_RowUpdating">
                                 <Columns>
                                     <asp:BoundField DataField="id_reserva" HeaderText="Codigo" HeaderStyle-HorizontalAlign="Center" >
                                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -86,7 +86,8 @@ Reservas
                                     <asp:BoundField DataField="id_mesa" HeaderText="Mesa" />
                                     <asp:TemplateField HeaderText="Ped."><ItemTemplate>
                                         <asp:ImageButton runat="server" 
-                                            CommandName="Edit" ImageUrl="~/image/edit.png" /></ItemTemplate></asp:TemplateField>
+                                            CommandName="Update" ImageUrl="~/image/edit.png" 
+                                            CausesValidation="False" /></ItemTemplate></asp:TemplateField>
                                 </Columns>
                                 </asp:GridView>
 			                </ContentTemplate></asp:UpdatePanel>
@@ -94,12 +95,17 @@ Reservas
 			             </div>
                          <br />
                          <br />
-                        
+                        <asp:UpdatePanel ID="upPedidoShow" runat="server" UpdateMode="Always">
+                        <ContentTemplate>
                         <asp:Button id="btnShowPedido" runat="server"/>
                <cc1:ModalPopupExtender ID="mpePedido" runat="server" 
                          CancelControlID="btnCerrarPedido" PopupControlID="pnlPedido" 
-                         TargetControlID="btnShowPedido">
+                         TargetControlID="btnShowPedido" Drag="True" DropShadow="True">
                </cc1:ModalPopupExtender>
+              </ContentTemplate>
+               </asp:UpdatePanel>
+
+
                         <asp:Panel ID="pnlPedido" runat="server" Width="700px" BackColor="White">
                         <table style="background-color:Gray">
                         <tr>
@@ -153,7 +159,7 @@ Reservas
                                         <asp:UpdatePanel ID="upPlato" runat="server">
                                             <ContentTemplate>
                                                 <asp:DropDownList ID="ddlPlato" runat="server" AutoPostBack="True" 
-                                                    Width="80%">
+                                                    Width="80%" onselectedindexchanged="ddlPlato_SelectedIndexChanged">
                                                 </asp:DropDownList>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
@@ -166,6 +172,45 @@ Reservas
                                        </ContentTemplate>
                                        </asp:UpdatePanel>
                                         </td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        Costo</td>
+                                    <td>
+                                        :</td>
+                                    <td>
+                                        <asp:UpdatePanel ID="upCosto" runat="server">
+                                            <ContentTemplate>
+                                                <asp:TextBox ID="txtCosto" runat="server"></asp:TextBox>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        </td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        Cantidad</td>
+                                    <td>
+                                        :</td>
+                                    <td>
+                                        <asp:UpdatePanel ID="upCantidad" runat="server">
+                                            <ContentTemplate>
+                                                <asp:HiddenField ID="hfIdReserva" runat="server" />
+                                                <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </td>
+                                    <td>
+                                        &nbsp;</td>
                                     <td>
                                         &nbsp;</td>
                                 </tr>

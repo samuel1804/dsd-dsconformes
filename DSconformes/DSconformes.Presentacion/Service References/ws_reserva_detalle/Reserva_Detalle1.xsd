@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DSconformes.PlatosService.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DSconformes.PlatosService.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12455/Reserva_Detalle.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Reserva_Detalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="costo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="id_plato" type="xs:int" />
+      <xs:element minOccurs="0" name="id_reserva" type="xs:int" />
+      <xs:element minOccurs="0" name="id_reserva_detalle" type="xs:int" />
+      <xs:element minOccurs="0" name="plato" nillable="true" type="tns:Platos" />
+      <xs:element minOccurs="0" name="reserva" nillable="true" type="tns:Reservas" />
+      <xs:element minOccurs="0" name="subtotal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reserva_Detalles" nillable="true" type="tns:Reserva_Detalles" />
+  <xs:complexType name="Platos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categoria" nillable="true" type="tns:Categorias" />
+      <xs:element minOccurs="0" name="cod_categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="costo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_categoria" type="xs:int" />
+      <xs:element minOccurs="0" name="id_plato" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Platos" nillable="true" type="tns:Platos" />
+  <xs:complexType name="Categorias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_categoria" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Categorias" nillable="true" type="tns:Categorias" />
+  <xs:complexType name="Reservas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asistentes" type="xs:int" />
+      <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" type="xs:int" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora_inicio" type="ser:duration" />
+      <xs:element minOccurs="0" name="id_mesa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_reserva" type="xs:int" />
+      <xs:element minOccurs="0" name="mesa" nillable="true" type="tns:Mesas" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="total_consumo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="zona" nillable="true" type="tns:Zonas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reservas" nillable="true" type="tns:Reservas" />
+  <xs:complexType name="Mesas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asientos" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" type="xs:int" />
+      <xs:element minOccurs="0" name="id_mesa" type="xs:int" />
+      <xs:element minOccurs="0" name="zona" nillable="true" type="tns:Zonas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mesas" nillable="true" type="tns:Mesas" />
+  <xs:complexType name="Zonas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="capacidad" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id_zona" type="xs:int" />
+      <xs:element minOccurs="0" name="minimo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Zonas" nillable="true" type="tns:Zonas" />
+</xs:schema>

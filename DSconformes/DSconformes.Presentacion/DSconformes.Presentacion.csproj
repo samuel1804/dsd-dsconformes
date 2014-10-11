@@ -75,6 +75,13 @@
     <Content Include="image\edit.png" />
     <Content Include="Mesa\DetalleMesa.aspx" />
     <Content Include="Reservas\CrearPedido.aspx" />
+    <None Include="Service References\ws_reserva_detalle\Reserva_Detalle.disco" />
+    <None Include="Service References\ws_reserva_detalle\configuration91.svcinfo" />
+    <None Include="Service References\ws_reserva_detalle\configuration.svcinfo" />
+    <None Include="Service References\ws_reserva_detalle\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Welcome.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Mesero\Mesero.aspx" />
@@ -121,6 +128,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ws_reserva\Reserva2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_reserva_detalle\Reserva_Detalle.wsdl" />
+    <None Include="Service References\ws_reserva_detalle\Reserva_Detalle.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_reserva_detalle\Reserva_Detalle1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_reserva_detalle\Reserva_Detalle2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ws_zona\DSconformes.Presentacion.ws_zona.Zonas.datasource">
@@ -233,6 +250,11 @@
     <Compile Include="Reservas\CrearPedido.aspx.designer.cs">
       <DependentUpon>CrearPedido.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ws_reserva_detalle\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,6 +347,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ws_mesa\" />
     <WCFMetadataStorage Include="Service References\ws_reserva\" />
+    <WCFMetadataStorage Include="Service References\ws_reserva_detalle\" />
     <WCFMetadataStorage Include="Service References\ws_zona\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
