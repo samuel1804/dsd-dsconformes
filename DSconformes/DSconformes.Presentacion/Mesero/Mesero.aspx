@@ -107,7 +107,7 @@
 			                    <asp:DropDownList ID="TxtSexo" runat="server" class="form-control" 
                                     TextMode="MultiLine">
                                     <asp:ListItem Text="Hombre" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Mujer" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="Mujer" Value="2"></asp:ListItem>
                                     </asp:DropDownList>
 			                </div>
 			              </div>
@@ -118,7 +118,7 @@
 			                <label class="form-label">Edad</label>
 			              </div>
 			              <div class="col-sm-10">
-			                  <asp:TextBox ID="TextBox4" runat="server" class="form-control input-sm"
+			                  <asp:TextBox ID="TxtEdad" runat="server" class="form-control input-sm"
                               required placeholder="Ingrese la edad"  ></asp:TextBox>
 			              </div>
 			            </div>
@@ -129,16 +129,25 @@
 			              <div class="col-sm-5">
 			              	<div class="col-sm-4">
                             DE
-			              	   <asp:TextBox ID="TxtHora" type="number" runat="server" class="form-control input-sm" required min="12" max="23" name="txtHora" style="width: 55px; "></asp:TextBox>
+			              	   <asp:TextBox ID="TxtEntrada" type="number" runat="server" class="form-control input-sm" required min="12" max="23" name="txtHora" style="width: 55px; "></asp:TextBox>
 			              	</div>
 <div class="col-sm-4">
                             A
-			              	   <asp:TextBox ID="TextBox5" type="number" runat="server" class="form-control input-sm" required min="16" max="23" name="txtHora" style="width: 55px; "></asp:TextBox>
+			              	   <asp:TextBox ID="TxtSalida" type="number" runat="server" class="form-control input-sm" required min="16" max="23" name="txtHora" style="width: 55px; "></asp:TextBox>
 			              	</div>
 			             
 			              </div>
 			     </div>
 			             <br /><br />
+
+                         <div style="text-align:center"><asp:Label ID="lblMensaje" runat="server" 
+                             Font-Bold="True" ForeColor="#00CC00"></asp:Label></div>
+                             <div style="text-align:center"><asp:Label ID="lblMensajeError" runat="server" 
+                             Font-Bold="True" ForeColor=Red></asp:Label></div>
+                             <br />
+                        <br />
+
+
 			          <div class="form-group">
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
