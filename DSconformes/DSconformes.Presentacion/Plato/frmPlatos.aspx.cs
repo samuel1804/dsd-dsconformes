@@ -68,7 +68,7 @@ namespace DSconformes.Presentacion.Plato
                 {
                     //Prueba de modificar
                     CargarCodigo();
-                    string postdata = "{\"id_plato\":" + Int32.Parse(txtCodigo.Text) + ",\"nombre\":\"" + txtnombre.Text + "\",\"categoria\":" + ddlCategoria.SelectedValue + ",\"costo\":" + decimal.Parse(txtPrecio.Text) + ",\"descripcion\":\"" + txtDescripcion.Text + "\"}";
+                    string postdata = "{\"id_plato\":" + Int32.Parse(txtCodigo.Text) + ",\"nombre\":\"" + txtnombre.Text + "\",\"id_categoria\":" + ddlCategoria.SelectedValue + ",\"costo\":" + decimal.Parse(txtPrecio.Text) + ",\"descripcion\":\"" + txtDescripcion.Text + "\"}";
                     byte[] data = Encoding.UTF8.GetBytes(postdata);
 
                     HttpWebRequest req = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;
