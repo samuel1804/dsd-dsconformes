@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" CodeBehind="CrearPedido.aspx.cs" Inherits="DSconformes.Presentacion.Reservas.CrearPedido" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 
 
 
@@ -7,7 +9,7 @@
 Reservas
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Contentheader" runat="server">
- <script type="text/javascript">
+    <script type="text/javascript">
     $("txtfecha.DateFrom").datepicker({
     minDate: 0,
 });
@@ -28,8 +30,8 @@ Reservas
         </div>
         <br>
         <div class="row">
-          <div class="col-sm-3"></div>
-           <div class="col-sm-6"> 
+          <div class="col-sm-1"></div>
+           <div class="col-sm-10"> 
         	 <div class="well">
         		</div>
          		 <input type="hidden" name="hidDirectivos">	  
@@ -41,92 +43,165 @@ Reservas
           		 
           		 
           		 <div class="form-group">
-			              <div class="col-sm-2">
-			                <label class="form-label">Fecha</label>
+			              <div class="col-sm-1">
+			                <label class="form-label">Nombre</label>
 			              </div>
-			              <div class="col-sm-4">
+			              <div class="col-sm-3">
 			             
-			            <asp:TextBox ID="TxtFecha" type="date" runat="server" class="form-control input-sm" name="txtfecha"></asp:TextBox>
+			            <asp:TextBox ID="txtBuscarNombre" runat="server"  class="form-control input-sm" 
+                                    placeholder="Buscar por Nombre"></asp:TextBox>
 			              </div>
 			              <div class="col-sm-1">
-			                <label class="form-label">Hora</label>
-			              </div>
-			              <div class="col-sm-5">
-			              	<div class="col-sm-4">
-			              	   <asp:TextBox ID="TxtHora" type="number" runat="server" class="form-control input-sm" required min="6" max="23" name="txtHora" style="width: 55px; "></asp:TextBox>
-			              	</div>
-			              	<div class="col-sm-8">
-			              		:00 Hrs
-			              	</div>
-			             
-			              </div>
-			     </div>
-			             <br /><br />
-			            <div class="form-group">
-			              <div class="col-sm-2">
-			                <label class="form-label">Nombres</label>
-			              </div>
-			              
-			                <div class="col-sm-10">
-			                    <asp:TextBox ID="txtNombre" runat="server" class="form-control input-sm" 
-                                    required placeholder="Ingrese su Nombre"></asp:TextBox>
-			                </div>
-			             </div>
-                         <br />
-                         <div class="form-group">
-                          <div class="col-sm-2">
 			                <label class="form-label">DNI</label>
 			              </div>
-			              <div class="col-sm-10">
-			                  <asp:TextBox ID="txtDNI" runat="server" class="form-control input-sm" required placeholder="Ingrese DNI" ></asp:TextBox>
+			              <div class="col-sm-3">
+			              	
+			              	   <asp:TextBox ID="txtBuscarDNI" runat="server"  class="form-control input-sm" 
+                                    placeholder="Buscar por DNI"  ></asp:TextBox>
+			              	
 			              </div>
-			            </div>
-			              <br/>
-                          <div class="form-group">
-                          <div class="col-sm-2">
-			                <label class="form-label">Zona</label>
-			              </div>
-			              <div class="col-sm-10">
-                         
-                         
-			                  <asp:DropDownList ID="ddlZona" runat="server" CssClass="dropdown" 
-                                  AutoPostBack="True" onselectedindexchanged="ddlZona_SelectedIndexChanged" ></asp:DropDownList>
-			              </div>
-			            </div>
-                        <br />
-                        <div class="form-group">
-                          <div class="col-sm-2">
-			                <label class="form-label">Mesa</label>
-			              </div>
-			              <div class="col-sm-10">
-			                  <asp:DropDownList ID="ddlMesa" runat="server" CssClass="dropdown" ></asp:DropDownList>
-			              </div>
-			            </div>
-			            <br />
-                        <div class="form-group">
-                          <div class="col-sm-2">
-			                <label class="form-label">Nro. Personas</label>
-			              </div>
-			              <div class="col-sm-10">
-			                 <asp:TextBox ID="txtCantidad" type="number" runat="server"  class="form-control input-sm" required min="1" max="20"  style="width:100px"
-                                    ></asp:TextBox>
-			              </div>
-			            </div>
+                          <div class="col-sm-3">
+                           
+					                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary" onclick="btnBuscar_Click"
+                                       />			              			             
+					            
+                          </div>
+			     </div>
+			             <br /><br />
+                         <br />
+			            <div>
+			              
+			                <div>
+                            <asp:UpdatePanel ID="upPedidos" runat="server">
+                            <ContentTemplate>
+                            <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="False" 
+                                    Width="100%">
+                                <Columns>
+                                    <asp:BoundField DataField="id_reserva" HeaderText="Codigo" HeaderStyle-HorizontalAlign="Center" >
+                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="nombre" HeaderText="Nombres" />
+                                    <asp:BoundField DataField="dni" HeaderText="DNI" />
+                                    <asp:BoundField DataField="id_mesa" HeaderText="Mesa" />
+                                    <asp:TemplateField HeaderText="Ped."><ItemTemplate>
+                                        <asp:ImageButton runat="server" 
+                                            CommandName="Edit" ImageUrl="~/image/edit.png" /></ItemTemplate></asp:TemplateField>
+                                </Columns>
+                                </asp:GridView>
+			                </ContentTemplate></asp:UpdatePanel>
+                            </div>
+			             </div>
+                         <br />
+                         <br />
+                        
+                        <asp:Button id="btnShowPedido" runat="server"/>
+               <cc1:ModalPopupExtender ID="mpePedido" runat="server" 
+                         CancelControlID="btnCerrarPedido" PopupControlID="pnlPedido" 
+                         TargetControlID="btnShowPedido">
+               </cc1:ModalPopupExtender>
+                        <asp:Panel ID="pnlPedido" runat="server" Width="700px" BackColor="White">
+                        <table style="background-color:Gray">
+                        <tr>
+                        <td style="width:99%; text-align: left;"><strong>Detalle del Pedido</strong> </td>
+                        <td><asp:Button id="btnCerrarPedido" runat="server" Text="X"/></td>
+                        </tr>
+                        </table>
+                            <table class="nav-justified">
+                                <tr>
+                                    <td style="width:2%">
+                                        &nbsp;</td>
+                                    <td  style="width:15%">
+                                        &nbsp;</td>
+                                    <td  style="width:2%">
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td  style="width:2%">
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td >
+                                        Categorias</td>
+                                    <td>
+                                        :</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        Platos</td>
+                                    <td>
+                                        :</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        <asp:GridView ID="gvPedidoDetalle" runat="server"></asp:GridView></td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+                       
+
+                        </asp:Panel>
+
                         <br /><br />
                      <div style="text-align:center"><asp:Label ID="lblMensaje" runat="server" 
                              Font-Bold="True" ForeColor="#00CC00"></asp:Label></div>
                      <br /><br />
-			          <div class="form-group">
-				           <c:if test="${requestScope.mensaje!='1'}">
-					          <div class="row">
-					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" onclick="BtnGrabar_Click" 
-                                       />			              			             
-					            </div>
-					          </div>	
-				          </c:if>	
-			          </div>			         
-			          	          		 			          		           		        
+			          			          	          		 			          		           		        
      
          	</div>
          </div>
