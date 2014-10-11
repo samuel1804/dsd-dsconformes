@@ -26,7 +26,16 @@ namespace DSconformes.Presentacion.ws_reserva {
         private int capacidadField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool habilitadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_zonaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int minimoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nombreField;
@@ -55,6 +64,32 @@ namespace DSconformes.Presentacion.ws_reserva {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descripcionField, value) != true)) {
+                    this.descripcionField = value;
+                    this.RaisePropertyChanged("descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool habilitado {
+            get {
+                return this.habilitadoField;
+            }
+            set {
+                if ((this.habilitadoField.Equals(value) != true)) {
+                    this.habilitadoField = value;
+                    this.RaisePropertyChanged("habilitado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int id_zona {
             get {
                 return this.id_zonaField;
@@ -63,6 +98,19 @@ namespace DSconformes.Presentacion.ws_reserva {
                 if ((this.id_zonaField.Equals(value) != true)) {
                     this.id_zonaField = value;
                     this.RaisePropertyChanged("id_zona");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int minimo {
+            get {
+                return this.minimoField;
+            }
+            set {
+                if ((this.minimoField.Equals(value) != true)) {
+                    this.minimoField = value;
+                    this.RaisePropertyChanged("minimo");
                 }
             }
         }
@@ -208,6 +256,9 @@ namespace DSconformes.Presentacion.ws_reserva {
         private System.TimeSpan hora_inicioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_mesaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_reservaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -298,6 +349,19 @@ namespace DSconformes.Presentacion.ws_reserva {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_mesa {
+            get {
+                return this.id_mesaField;
+            }
+            set {
+                if ((this.id_mesaField.Equals(value) != true)) {
+                    this.id_mesaField = value;
+                    this.RaisePropertyChanged("id_mesa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int id_reserva {
             get {
                 return this.id_reservaField;
@@ -378,6 +442,12 @@ namespace DSconformes.Presentacion.ws_reserva {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Registrar", ReplyAction="http://tempuri.org/IReserva/RegistrarResponse")]
         DSconformes.Presentacion.ws_reserva.Reservas Registrar(string nombre, string dni, DSconformes.Presentacion.ws_reserva.Zonas zona, DSconformes.Presentacion.ws_reserva.Mesas mesa, System.TimeSpan hora_inicio, int estado, int asistentes, System.DateTime fecha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Listar", ReplyAction="http://tempuri.org/IReserva/ListarResponse")]
+        DSconformes.Presentacion.ws_reserva.Reservas[] Listar(string nombre, string dni);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva/Obtener", ReplyAction="http://tempuri.org/IReserva/ObtenerResponse")]
+        DSconformes.Presentacion.ws_reserva.Reservas Obtener(int id_reserva);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -409,6 +479,14 @@ namespace DSconformes.Presentacion.ws_reserva {
         
         public DSconformes.Presentacion.ws_reserva.Reservas Registrar(string nombre, string dni, DSconformes.Presentacion.ws_reserva.Zonas zona, DSconformes.Presentacion.ws_reserva.Mesas mesa, System.TimeSpan hora_inicio, int estado, int asistentes, System.DateTime fecha) {
             return base.Channel.Registrar(nombre, dni, zona, mesa, hora_inicio, estado, asistentes, fecha);
+        }
+        
+        public DSconformes.Presentacion.ws_reserva.Reservas[] Listar(string nombre, string dni) {
+            return base.Channel.Listar(nombre, dni);
+        }
+        
+        public DSconformes.Presentacion.ws_reserva.Reservas Obtener(int id_reserva) {
+            return base.Channel.Obtener(id_reserva);
         }
     }
 }

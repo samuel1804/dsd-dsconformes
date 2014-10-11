@@ -13,16 +13,54 @@
   <wsdl:message name="IReserva_Registrar_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarResponse" />
   </wsdl:message>
+  <wsdl:message name="IReserva_Listar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Listar" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Listar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Obtener_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Obtener_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IReserva">
     <wsdl:operation name="Registrar">
       <wsdl:input wsaw:Action="http://tempuri.org/IReserva/Registrar" message="tns:IReserva_Registrar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReserva/RegistrarResponse" message="tns:IReserva_Registrar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Listar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReserva/Listar" message="tns:IReserva_Listar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReserva/ListarResponse" message="tns:IReserva_Listar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReserva/Obtener" message="tns:IReserva_Obtener_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReserva/ObtenerResponse" message="tns:IReserva_Obtener_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IReserva" type="tns:IReserva">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Registrar">
       <soap:operation soapAction="http://tempuri.org/IReserva/Registrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listar">
+      <soap:operation soapAction="http://tempuri.org/IReserva/Listar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener">
+      <soap:operation soapAction="http://tempuri.org/IReserva/Obtener" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
