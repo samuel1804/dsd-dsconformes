@@ -25,6 +25,12 @@
   <wsdl:message name="IReserva_Obtener_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerResponse" />
   </wsdl:message>
+  <wsdl:message name="IReserva_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IReserva_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IReserva">
     <wsdl:operation name="Registrar">
       <wsdl:input wsaw:Action="http://tempuri.org/IReserva/Registrar" message="tns:IReserva_Registrar_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="Obtener">
       <wsdl:input wsaw:Action="http://tempuri.org/IReserva/Obtener" message="tns:IReserva_Obtener_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReserva/ObtenerResponse" message="tns:IReserva_Obtener_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReserva/Actualizar" message="tns:IReserva_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReserva/ActualizarResponse" message="tns:IReserva_Actualizar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IReserva" type="tns:IReserva">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="Obtener">
       <soap:operation soapAction="http://tempuri.org/IReserva/Obtener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <soap:operation soapAction="http://tempuri.org/IReserva/Actualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

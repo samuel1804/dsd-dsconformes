@@ -94,9 +94,17 @@ namespace DSconformes.Presentacion.Reservas
         }
         private void CargarDetalle() { 
         ws_reserva_detalle.Reserva_DetalleClient wdc=new ws_reserva_detalle.Reserva_DetalleClient();
-      gvPedidoDetalle.DataSource=  wdc.ListarReserva(int.Parse(hfIdReserva.Value));
+           
+            var rd = wdc.ListarReserva(int.Parse(hfIdReserva.Value));
+            gvPedidoDetalle.DataSource = rd;
       gvPedidoDetalle.DataBind();
 
+            //CalcularTotal
+            decimal Total=0;
+      foreach (var r in rd) {
+          Total += (r.costo * r.cantidad);
+      }
+      txtTotal.Text = Total.ToString();
 
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -112,6 +120,11 @@ namespace DSconformes.Presentacion.Reservas
                 rd.subtotal = rd.costo * rd.cantidad;
                 rdc.Insertar(rd);
 
+
+                ws_reserva.ReservaClient rc = new ws_reserva.ReservaClient();
+                rc.Actualizar(int.Parse(hfIdReserva.Value.ToString()), decimal.Parse(txtTotal.Text));
+                
+
                 CargarDetalle();
                 mpePedido.Show();
             }
@@ -120,14 +133,16 @@ namespace DSconformes.Presentacion.Reservas
             }
         }
 
-       
 
+        
         protected void gvPedidos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             int idr= (int)this.gvPedidos.DataKeys[e.RowIndex]["id_reserva"];
 
             hfIdReserva.Value = idr.ToString();
             CargarDetalle();
+            
+
             mpePedido.Show();
         }
         private void CargarDatos() {

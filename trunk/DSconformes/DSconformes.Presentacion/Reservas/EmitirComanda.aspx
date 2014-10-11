@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" CodeBehind="CrearPedido.aspx.cs" Inherits="DSconformes.Presentacion.Reservas.CrearPedido" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true" CodeBehind="EmitirComanda.aspx.cs" Inherits="DSconformes.Presentacion.Reservas.EmitirComanda" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -25,7 +25,7 @@ Reservas
           <div class="container">
       
         <div class="text-center">
-        <h3><strong >Crear Pedido</strong></h3> 
+        <h3><strong >Emitir Comanda</strong></h3> 
       	        
         </div>
         <br>
@@ -87,7 +87,7 @@ Reservas
                                     <asp:BoundField DataField="id_mesa" HeaderText="Mesa" />
                                     <asp:TemplateField HeaderText="Ped."><ItemTemplate>
                                         <asp:ImageButton runat="server" 
-                                            CommandName="Update" ImageUrl="~/image/edit.png" 
+                                            CommandName="Update" ImageUrl="~/image/visa.png" 
                                             CausesValidation="False" /></ItemTemplate></asp:TemplateField>
                                 </Columns>
                                 </asp:GridView>
@@ -134,83 +134,55 @@ Reservas
                                     <td>
                                         &nbsp;</td>
                                     <td >
-                                        Categorias</td>
-                                    <td>
-                                        :</td>
-                                    <td>
-                                    <asp:UpdatePanel ID="upCategoria" runat="server">
-                                    <ContentTemplate>
-                                    <asp:DropDownList ID="ddlCategoria" runat="server" Width="80%" AutoPostBack="True" 
-                                            onselectedindexchanged="ddlCategoria_SelectedIndexChanged"></asp:DropDownList>
-                                    </ContentTemplate>
-                                    </asp:UpdatePanel>
-                                        </td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        Platos</td>
-                                    <td>
-                                        :</td>
-                                    <td>
-                                        <asp:UpdatePanel ID="upPlato" runat="server">
-                                            <ContentTemplate>
-                                                <asp:DropDownList ID="ddlPlato" runat="server" AutoPostBack="True" 
-                                                    Width="80%" onselectedindexchanged="ddlPlato_SelectedIndexChanged">
-                                                </asp:DropDownList>
-                                            </ContentTemplate>
-                                        </asp:UpdatePanel>
-                                    </td>
-                                    <td>
-                                       <asp:UpdatePanel id="upAgregar" runat="server">
-                                       <ContentTemplate>
-                                        <asp:Button ID="btnAgregar" runat="server" class="btn btn-primary" 
-                                            onclick="btnAgregar_Click" Text="Agregar" />
-                                       </ContentTemplate>
-                                       </asp:UpdatePanel>
-                                        </td>
-                                    <td>
-                                        &nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        Costo</td>
-                                    <td>
-                                        :</td>
-                                    <td>
-                                        <asp:UpdatePanel ID="upCosto" runat="server">
-                                            <ContentTemplate>
-                                                <asp:TextBox ID="txtCosto" runat="server"></asp:TextBox>
-                                            </ContentTemplate>
-                                        </asp:UpdatePanel>
-                                        </td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        Cantidad</td>
+                                        Cliente</td>
                                     <td>
                                         :</td>
                                     <td>
                                         <asp:UpdatePanel ID="upCantidad" runat="server">
                                             <ContentTemplate>
                                                 <asp:HiddenField ID="hfIdReserva" runat="server" />
-                                                <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtCliente" runat="server"></asp:TextBox>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        </td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        DNI</td>
+                                    <td>
+                                        :</td>
+                                    <td>
+                                        <asp:UpdatePanel ID="upCosto" runat="server">
+                                            <ContentTemplate>
+                                                <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        Total</td>
+                                    <td>
+                                        :</td>
+                                    <td>
+                                        <asp:UpdatePanel ID="upCosto0" runat="server">
+                                            <ContentTemplate>
+                                                <asp:TextBox ID="txtTotal" runat="server"></asp:TextBox>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        </td>
                                     <td>
                                         &nbsp;</td>
                                     <td>
@@ -272,22 +244,19 @@ Reservas
                                         &nbsp;</td>
                                     <td>
                                         &nbsp;</td>
-                                    <td style="text-align: right">
-                                        Total:</td>
                                     <td>
-                                        <asp:TextBox ID="txtTotal" runat="server"></asp:TextBox></td>
-                                    <td>
-                                        &nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
+                                        <asp:UpdatePanel ID="upAgregar" runat="server">
+                                            <ContentTemplate>
+                                                <asp:Button ID="btnAgregar" runat="server" class="btn btn-primary" 
+                                                    onclick="btnAgregar_Click" Text="Cobrar" />
+                                                    
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    
+                                                    <asp:Button ID="Button1" runat="server" class="btn btn-primary" 
+                                                     Text="Imprimir" onclick="Button1_Click" />
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </td>
                                     <td>
                                         &nbsp;</td>
                                     <td>

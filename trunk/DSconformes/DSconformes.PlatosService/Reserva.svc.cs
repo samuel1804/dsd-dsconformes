@@ -36,6 +36,17 @@ namespace DSconformes.PlatosService
         public Reservas Obtener(int id_reserva) {
             return rs.Obtener(id_reserva);
         }
+
+        public void Actualizar(int id_reserva,decimal Total){
+
+            //Reservas reserva = new Reservas();
+            //Reservas resant = new Reservas();
+            //resant = rs.Obtener(id_reserva);
+
+            //resant.total_consumo = Total;
+            //rs.Modificar(resant);
+            
+        }
         
     }
     }
