@@ -61,7 +61,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="Categoria\Categorias.aspx" />
+    <Content Include="Categoria\frmCategorias.aspx" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -219,12 +219,12 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Categorias.cs" />
-    <Compile Include="Categoria\Categorias.aspx.cs">
-      <DependentUpon>Categorias.aspx</DependentUpon>
+    <Compile Include="Categoria\frmCategorias.aspx.cs">
+      <DependentUpon>frmCategorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Categoria\Categorias.aspx.designer.cs">
-      <DependentUpon>Categorias.aspx</DependentUpon>
+    <Compile Include="Categoria\frmCategorias.aspx.designer.cs">
+      <DependentUpon>frmCategorias.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.aspx.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
