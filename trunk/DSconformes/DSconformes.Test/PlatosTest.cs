@@ -19,8 +19,7 @@ namespace DSconformes.Presentacion
         public void Insertar()
         {
             //Prueba de modificar
-
-            string postdata = "{\"id_plato\":21,\"nombre\":\"Ceviche\",\"categoria\":2,\"costo\":20,\"descripcion\":\"Ceviche\"}";
+            string postdata = "{\"id_plato\":21,\"nombre\":\"Ceviche\",\"id_categoria\":2,\"costo\":20,\"descripcion\":\"Ceviche\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
 
             HttpWebRequest req = WebRequest.Create("http://localhost:12455/Plato.svc/Platos") as HttpWebRequest;

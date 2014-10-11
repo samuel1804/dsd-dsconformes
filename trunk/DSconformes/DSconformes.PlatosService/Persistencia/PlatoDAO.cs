@@ -12,7 +12,7 @@ namespace DSconformes.Persistencia
         public Platos Insertar(Platos pbePlato)
         {
 
-            string sql = "INSERT INTO t_plato(id_plato,nombre,categoria,costo,descripcion) VALUES(@id_plato,@nombre,@categoria,@costo,@descripcion)";
+            string sql = "INSERT INTO t_plato(id_plato,nombre,categoria,costo,descripcion) VALUES(@id_plato,@nombre,@id_categoria,@costo,@descripcion)";
             using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
             {
                 con.Open();
@@ -20,7 +20,7 @@ namespace DSconformes.Persistencia
                 {
                     com.Parameters.Add(new SqlParameter("@id_plato", pbePlato.id_plato));
                     com.Parameters.Add(new SqlParameter("@nombre", pbePlato.nombre));
-                    com.Parameters.Add(new SqlParameter("@categoria", pbePlato.categoria));
+                    com.Parameters.Add(new SqlParameter("@id_categoria", pbePlato.id_categoria));
                     com.Parameters.Add(new SqlParameter("@costo", pbePlato.costo));
                     com.Parameters.Add(new SqlParameter("@descripcion", pbePlato.descripcion));
 
