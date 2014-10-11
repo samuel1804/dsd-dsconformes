@@ -70,6 +70,7 @@
     <Content Include="Content\Styles\Site.css" />
     <Content Include="frmLogin.aspx" />
     <Content Include="Mesa\DetalleMesa.aspx" />
+    <Content Include="Reservas\CrearPedido.aspx" />
     <Content Include="Welcome.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Mesero\Mesero.aspx" />
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="Meseros.cs" />
     <Compile Include="Platos.cs" />
+    <Compile Include="Reservas\CrearPedido.aspx.cs">
+      <DependentUpon>CrearPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservas\CrearPedido.aspx.designer.cs">
+      <DependentUpon>CrearPedido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
