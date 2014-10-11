@@ -42,5 +42,45 @@ namespace DSconformes.Persistencia
 
             return Lista;
         }
+        public Categorias Insertar(Categorias pbeCat)
+        {
+            string sql = "INSERT INTO t_categoria(id_categoria,nombre) VALUES(@id_categoria,@nombre)";
+            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand(sql, con))
+                {
+                    com.Parameters.Add(new SqlParameter("@id_categoria", pbeCat.id_categoria));
+                    com.Parameters.Add(new SqlParameter("@nombre", pbeCat.nombre));
+                    com.ExecuteNonQuery();
+                }
+            }
+            return pbeCat;
+        }
+        public Categorias ObtenerUltimo()
+        {
+            string sql = "Select * from t_categoria order by id_categoria desc";
+            Categorias categoria = new Categorias();
+
+            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand(sql, con))
+                {
+                    using (SqlDataReader dr = com.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            categoria = new Categorias()
+                            {
+                                id_categoria = (int)dr["id_categoria"],
+                            };
+                        }
+                    }
+                }
+            }
+            return categoria;
+        }
+
     }
 }
