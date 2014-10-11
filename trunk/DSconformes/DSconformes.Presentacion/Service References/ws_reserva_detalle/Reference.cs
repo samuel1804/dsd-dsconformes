@@ -23,6 +23,9 @@ namespace DSconformes.Presentacion.ws_reserva_detalle {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlatoNombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int cantidadField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -53,6 +56,19 @@ namespace DSconformes.Presentacion.ws_reserva_detalle {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlatoNombre {
+            get {
+                return this.PlatoNombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlatoNombreField, value) != true)) {
+                    this.PlatoNombreField = value;
+                    this.RaisePropertyChanged("PlatoNombre");
+                }
             }
         }
         
@@ -186,6 +202,9 @@ namespace DSconformes.Presentacion.ws_reserva_detalle {
         private string cod_categoriaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cod_platoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal costoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -232,6 +251,19 @@ namespace DSconformes.Presentacion.ws_reserva_detalle {
                 if ((object.ReferenceEquals(this.cod_categoriaField, value) != true)) {
                     this.cod_categoriaField = value;
                     this.RaisePropertyChanged("cod_categoria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cod_plato {
+            get {
+                return this.cod_platoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cod_platoField, value) != true)) {
+                    this.cod_platoField = value;
+                    this.RaisePropertyChanged("cod_plato");
                 }
             }
         }
@@ -801,6 +833,15 @@ namespace DSconformes.Presentacion.ws_reserva_detalle {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva_Detalle/Registrar", ReplyAction="http://tempuri.org/IReserva_Detalle/RegistrarResponse")]
         void Registrar(DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles reserva_detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva_Detalle/Listar", ReplyAction="http://tempuri.org/IReserva_Detalle/ListarResponse")]
+        DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles[] Listar(int id_reserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva_Detalle/Insertar", ReplyAction="http://tempuri.org/IReserva_Detalle/InsertarResponse")]
+        DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles Insertar(DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles reserva_detalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReserva_Detalle/ListarReserva", ReplyAction="http://tempuri.org/IReserva_Detalle/ListarReservaResponse")]
+        DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles[] ListarReserva(int id_reserva);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -832,6 +873,18 @@ namespace DSconformes.Presentacion.ws_reserva_detalle {
         
         public void Registrar(DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles reserva_detalle) {
             base.Channel.Registrar(reserva_detalle);
+        }
+        
+        public DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles[] Listar(int id_reserva) {
+            return base.Channel.Listar(id_reserva);
+        }
+        
+        public DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles Insertar(DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles reserva_detalle) {
+            return base.Channel.Insertar(reserva_detalle);
+        }
+        
+        public DSconformes.Presentacion.ws_reserva_detalle.Reserva_Detalles[] ListarReserva(int id_reserva) {
+            return base.Channel.ListarReserva(id_reserva);
         }
     }
 }
