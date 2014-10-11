@@ -14,5 +14,14 @@ namespace DSconformes.PlatosService
     {
         [OperationContract]
         void Registrar(Reserva_Detalles reserva_detalle);
+
+        [OperationContract]
+        List<Reserva_Detalles> Listar(int id_reserva);
+
+        [OperationContract]
+        Reserva_Detalles Insertar(Reserva_Detalles reserva_detalle);
+
+        [OperationContract]
+        List<Reserva_Detalles> ListarReserva(int id_reserva);
     }
 }

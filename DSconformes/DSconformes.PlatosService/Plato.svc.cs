@@ -31,5 +31,11 @@ namespace DSconformes.PlatosService
         {
             return dao.Listar(cod_categoria);
         }
+
+
+        public Platos Obtener(string cod_plato)
+        {
+            return dao.Obtener(cod_plato);
+        }
     }
 }

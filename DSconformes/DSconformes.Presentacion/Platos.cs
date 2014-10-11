@@ -14,7 +14,7 @@ namespace DSconformes.Presentacion
         public string nombre { get; set; }
       
         public Categorias categoria { get; set; }
-       
+        public string cod_plato { get; set; }
         public decimal costo { get; set; }
   
         public string descripcion { get; set; }

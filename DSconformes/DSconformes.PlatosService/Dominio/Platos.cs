@@ -25,5 +25,7 @@ namespace DSconformes.PlatosService.Dominio
 
         [DataMember]
         public string cod_categoria { get; set; }
+        [DataMember]
+        public string cod_plato { get; set; }
     }
 }

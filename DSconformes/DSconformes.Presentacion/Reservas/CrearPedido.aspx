@@ -75,7 +75,8 @@ Reservas
                             <asp:UpdatePanel ID="upPedidos" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                             <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="False" 
-                                    Width="100%" onrowupdating="gvPedidos_RowUpdating">
+                                    Width="100%" onrowupdating="gvPedidos_RowUpdating" 
+                                    DataKeyNames="id_reserva">
                                 <Columns>
                                     <asp:BoundField DataField="id_reserva" HeaderText="Codigo" HeaderStyle-HorizontalAlign="Center" >
                                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -97,7 +98,8 @@ Reservas
                          <br />
                         <asp:UpdatePanel ID="upPedidoShow" runat="server" UpdateMode="Always">
                         <ContentTemplate>
-                        <asp:Button id="btnShowPedido" runat="server"/>
+                        <asp:Button id="btnShowPedido" runat="server" BackColor="Transparent" 
+                                BorderColor="Transparent" ForeColor="Transparent" Height="0px" Width="0px"/>
                <cc1:ModalPopupExtender ID="mpePedido" runat="server" 
                          CancelControlID="btnCerrarPedido" PopupControlID="pnlPedido" 
                          TargetControlID="btnShowPedido" Drag="True" DropShadow="True">
@@ -231,21 +233,21 @@ Reservas
                                 <tr>
                                     <td>
                                         &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        &nbsp;</td>
-                                    <td>
-                                        <asp:GridView ID="gvPedidoDetalle" runat="server" AutoGenerateColumns="False">
+                                    <td colspan="4">
+                                    <asp:UpdatePanel ID="upPedidoDetalle" runat="server">
+                                    <ContentTemplate>
+                                        <asp:GridView ID="gvPedidoDetalle" runat="server" AutoGenerateColumns="False" 
+                                            Width="95%">
                                             <Columns>
-                                                <asp:BoundField DataField="nombre" HeaderText="Plato" />
+                                                <asp:BoundField DataField="PlatoNombre" HeaderText="Plato" />
                                                 <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
                                                 <asp:BoundField DataField="costo" HeaderText="Costo" />
                                                 <asp:BoundField DataField="subtotal" HeaderText="SubTotal" />
                                             </Columns>
-                                        </asp:GridView></td>
-                                    <td>
-                                        &nbsp;</td>
+                                        </asp:GridView>
+                                        </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </td>
                                     <td>
                                         &nbsp;</td>
                                 </tr>

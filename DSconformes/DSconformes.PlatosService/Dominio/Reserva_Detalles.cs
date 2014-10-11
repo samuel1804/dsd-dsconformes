@@ -26,5 +26,7 @@ namespace DSconformes.PlatosService.Dominio
         public int id_reserva { get; set; }
         [DataMember]
         public int id_plato { get; set; }
+        [DataMember]
+        public string PlatoNombre { get; set; }
     }
 }
