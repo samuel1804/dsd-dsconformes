@@ -57,7 +57,8 @@
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" class="btn btn-primary" 
+					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" 
+                                        class="btn btn-primary" onclick="BtnGrabar_Click" 
                                         />			              			             
 					            </div>
 					          </div>	

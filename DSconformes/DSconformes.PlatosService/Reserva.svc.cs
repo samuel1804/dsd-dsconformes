@@ -29,8 +29,9 @@ namespace DSconformes.PlatosService
             
         }
 
-        public List<Reservas> Listar() {
-            return rs.ListarTodos().ToList();
+        public List<Reservas> Listar(string nombre, string dni)
+        {
+            return rs.ListarTodos().Where(t=>t.nombre.Contains(nombre) || t.dni.Contains(dni)).ToList();
         }
         public Reservas Obtener(int id_reserva) {
             return rs.Obtener(id_reserva);

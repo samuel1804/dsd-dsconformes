@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\Librerias\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -69,6 +72,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\Styles\Site.css" />
     <Content Include="frmLogin.aspx" />
+    <Content Include="image\edit.png" />
     <Content Include="Mesa\DetalleMesa.aspx" />
     <Content Include="Reservas\CrearPedido.aspx" />
     <Content Include="Welcome.aspx" />

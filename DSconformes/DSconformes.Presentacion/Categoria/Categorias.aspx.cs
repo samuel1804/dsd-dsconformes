@@ -13,5 +13,10 @@ namespace DSconformes.Presentacion.Categoria
         {
 
         }
+
+        protected void BtnGrabar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
