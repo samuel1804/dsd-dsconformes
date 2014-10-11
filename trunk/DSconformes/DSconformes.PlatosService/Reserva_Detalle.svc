@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="DSconformes.PlatosService.Reserva_Detalle" CodeBehind="Reserva_Detalle.svc.cs" %>
