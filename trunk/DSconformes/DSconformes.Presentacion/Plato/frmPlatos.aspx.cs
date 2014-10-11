@@ -9,7 +9,6 @@ using System.IO;
 using System.Web.Script.Serialization;
 using System.Text;
 
-
 namespace DSconformes.Presentacion.Plato
 {
     public partial class frmPlatos : System.Web.UI.Page
@@ -52,8 +51,6 @@ namespace DSconformes.Presentacion.Plato
             JavaScriptSerializer js = new JavaScriptSerializer();
             Platos platoobtenido = js.Deserialize<Platos>(platojson);
             txtCodigo.Text = (platoobtenido.id_plato+1).ToString() ?? "0";
-
-
         }
 
         protected void BtnGrabar_Click(object sender, EventArgs e)

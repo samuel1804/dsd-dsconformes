@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" Inherits="DSconformes.Presentacion.Plato.frmPlatos" CodeBehind="frmPlatos.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" 
+Inherits="DSconformes.Presentacion.Plato.frmPlatos" 
+CodeBehind="frmPlatos.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
       <asp:UpdatePanel ID="uptabla" runat ="server"><ContentTemplate>
 
           <div class="container">
@@ -102,6 +103,7 @@
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
+
 					                <asp:Button ID="BtnGrabar" runat="server" Text="Guardar" 
                                         class="btn btn-primary" onclick="BtnGrabar_Click" 
                                         />		
@@ -110,7 +112,8 @@
                                     <%--<asp:Button ID="btnEliminar" runat="server" class="btn btn-primary" 
                                         Text="Eliminar" />			              			             
                                     <asp:Button ID="btnActualizar" runat="server" class="btn btn-primary" 
-                                        Text="Actualizar" />--%>			              			             
+                                        Text="Actualizar" />--%>	
+                                        		              			             
 					            </div>
 					          </div>	
 				          </c:if>	
