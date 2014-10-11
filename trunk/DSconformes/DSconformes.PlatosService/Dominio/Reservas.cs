@@ -21,6 +21,9 @@ namespace DSconformes.PlatosService.Dominio
         [DataMember]
         public Mesas mesa { get; set; }
         [DataMember]
+        public int id_mesa { get; set; }
+
+        [DataMember]
         public TimeSpan hora_inicio { get; set; }
         [DataMember]
         public int estado { get; set; }

@@ -5,6 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSconformes.PlatosService",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerías", "Librerías", "{BD4A3BF2-1F91-473E-A673-AF94730232B1}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\SGF_HATUN Ultima Version\SGF_HATUN Ultima Version\SGF_Web\Bin\AjaxControlToolkit.dll = ..\..\SGF_HATUN Ultima Version\SGF_HATUN Ultima Version\SGF_Web\Bin\AjaxControlToolkit.dll
 		..\..\Desktop\DSDesconformes\PrePractica\PrePractica\Librerías\Iesi.Collections.dll = ..\..\Desktop\DSDesconformes\PrePractica\PrePractica\Librerías\Iesi.Collections.dll
 		Librerias\Iesi.Collections.dll = Librerias\Iesi.Collections.dll
 		..\..\Desktop\DSDesconformes\PrePractica\PrePractica\Librerías\NHibernate.dll = ..\..\Desktop\DSDesconformes\PrePractica\PrePractica\Librerías\NHibernate.dll

@@ -57,7 +57,7 @@
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reservaciones <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
 						<li><a href="/Reservas/Reservar.aspx" target="_top" >Reservar</a></li>
-                        <li><a href="#" target="_top" >Crear Pedido</a></li>
+                        <li><a href="/Reservas/CrearPedido.aspx" target="_top" >Crear Pedido</a></li>
 						<li><a href="#" target="_top" >Emitir Comanda</a></li>  							
 					</ul>
 			  </li>

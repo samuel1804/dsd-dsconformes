@@ -18,6 +18,7 @@
     <property name="asistentes" column="asistentes" />
     <property name="total_consumo" column="total_consumo" />
     <property name="fecha" column="fecha" />
+    <property name="id_mesa" column="id_mesa" />
 
   </class>
 </hibernate-mapping>
