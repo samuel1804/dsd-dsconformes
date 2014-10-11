@@ -64,6 +64,7 @@ namespace DSconformes.Presentacion.Reservas
                 var pedidos = reservaBL.Listar(txtBuscarNombre.Text, txtBuscarDNI.Text);
                 gvPedidos.DataSource = pedidos;
                 gvPedidos.DataBind();
+                upPedidos.Update();
             }
             catch (Exception ex)
             {
@@ -87,15 +88,42 @@ namespace DSconformes.Presentacion.Reservas
         protected void ddlCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarPlatos();
+            mpePedido.Show();
         }
         private void CargarDetalle() { 
         
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                ws_reserva_detalle.Reserva_DetalleClient rdc = new ws_reserva_detalle.Reserva_DetalleClient();
+                ws_reserva_detalle.Reserva_Detalles rd = new ws_reserva_detalle.Reserva_Detalles();
+                rd.id_reserva = int.Parse(hfIdReserva.Value.ToString());
+                rd.id_plato = int.Parse(ddlPlato.SelectedValue.ToString());
+                rd.cantidad = int.Parse(txtCantidad.Text);
+                rd.costo = decimal.Parse(txtCosto.Text);
+                rd.subtotal = rd.costo * rd.cantidad;
+                rdc.Registrar(rd);
 
-            CargarDetalle();
+                CargarDetalle();
+            }
+            catch (Exception ex) { 
+
+            }
+        }
+
+       
+
+        protected void gvPedidos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            mpePedido.Show();
+        }
+
+        protected void ddlPlato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            mpePedido.Show();
         }
 
 
